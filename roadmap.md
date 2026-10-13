@@ -1,4 +1,4 @@
 # Bella website
-- [ ] Construir a identidade visual e a apresentação com as imagens fornecidas.
-- [ ] Apresentar funcionalidades reais do README sem informações sensíveis.
-- [ ] Verificar a página e a navegação em computador e celular.
+- [x] Construir a identidade visual e a apresentação com as imagens fornecidas.
+- [x] Apresentar funcionalidades reais do README sem informações sensíveis.
+- [x] Verificar a página e a navegação em computador e celular.
