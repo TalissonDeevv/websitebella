@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowUp, Heart, LockKeyhole, MessageCircle, CalendarHeart, ShieldCheck, ChartNoAxesCombined, Handshake, BookOpen, Headphones, Bell } from "lucide-react";
+import { ArrowDown, Heart, LockKeyhole, MessageCircle, CalendarHeart, ShieldCheck, ChartNoAxesCombined, Handshake, BookOpen, Headphones, Bell } from "lucide-react";
 import room from "@/assets/bella-room.png.asset.json";
 import wordmark from "@/assets/bella-wordmark.png.asset.json";
+import Footer01 from "@/components/ui/footer-01";
 import brand from "@/assets/bella-nyelle.png.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -33,13 +34,21 @@ function Index() {
   return (
     <div className="bella-page" id="inicio">
       <header className="bella-nav">
-        <a href="#inicio" aria-label="Bella — início"><img className="nav-logo" src={wordmark.url} alt="Bella" /></a>
+        <a className="nav-home" href="#inicio" aria-label="Bella — início"><img className="nav-logo" src={wordmark.url} alt="Bella" /><span className="nav-brand-note">Um universo de cuidado</span></a>
         <nav className="nav-links" aria-label="Navegação principal">
-          <a href="#sobre">O universo Bella</a>
-          <a href="#funcionalidades">O que ela faz</a>
-          <a href="#essencia">Sua essência</a>
+          <a href="#sobre"><span>01</span> O universo Bella</a>
+          <a href="#funcionalidades"><span>02</span> O que ela faz</a>
+          <a href="#essencia"><span>03</span> Sua essência</a>
         </nav>
-        <span className="private-note"><LockKeyhole aria-hidden="true" /> Bot privada</span>
+        <span className="nav-private"><LockKeyhole aria-hidden="true" /> Privada & única</span>
+        <details className="nav-mobile">
+          <summary>Explorar <span aria-hidden="true">+</span></summary>
+          <nav aria-label="Navegação para celular">
+            <a href="#sobre">01 <span>O universo Bella</span></a>
+            <a href="#funcionalidades">02 <span>O que ela faz</span></a>
+            <a href="#essencia">03 <span>Sua essência</span></a>
+          </nav>
+        </details>
       </header>
 
       <main>
@@ -72,7 +81,7 @@ function Index() {
           </div>
           <div className="feature-grid">
             {features.map(({ icon: Icon, title, description, label }, index) => (
-              <article className="feature-item" key={title}>
+              <article className="feature-item" id={`cuidado-${index + 1}`} key={title}>
                 <Icon className="feature-icon" aria-hidden="true" />
                 <div><h3 className="feature-title">{title}</h3><p className="feature-description">{description}</p><div className="feature-index">0{index + 1} / {label}</div></div>
               </article>
@@ -91,11 +100,7 @@ function Index() {
         </section>
       </main>
 
-      <footer className="bella-footer content-width">
-        <div className="footer-upper"><span>UM UNIVERSO DE TALISSON SOUZA</span><span className="private-note"><LockKeyhole aria-hidden="true" /> Privada. Única. Bella.</span></div>
-        <a href="#inicio" aria-label="Voltar ao início"><img className="footer-wordmark" src={wordmark.url} alt="Bella" loading="lazy" /></a>
-        <div className="footer-bottom"><span>© 2026 Bella Nyelle</span><span className="footer-love">Um pouquinho de inteligência. Muito <Heart aria-label="carinho" />.</span><a className="back-top" href="#inicio">Voltar ao topo <ArrowUp aria-hidden="true" /></a></div>
-      </footer>
+      <Footer01 />
     </div>
   );
 }
