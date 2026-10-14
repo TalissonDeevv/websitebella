@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, Heart, LockKeyhole, MessageCircle, CalendarHeart, ShieldCheck, ChartNoAxesCombined, Handshake, BookOpen, Headphones, Bell } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Heart, MessageCircle, CalendarHeart, ShieldCheck, ChartNoAxesCombined, Handshake, BookOpen, Headphones, Bell } from "lucide-react";
 import room from "@/assets/bella-room.png.asset.json";
 import wordmark from "@/assets/bella-wordmark.png.asset.json";
 import Footer01 from "@/components/ui/footer-01";
@@ -31,16 +32,17 @@ const features = [
 ];
 
 function Index() {
+  const [activeSection, setActiveSection] = useState("inicio");
   return (
     <div className="bella-page" id="inicio">
       <header className="bella-nav">
-        <a className="nav-home" href="#inicio" aria-label="Bella — início"><img className="nav-logo" src={wordmark.url} alt="Bella" /><span className="nav-brand-note">Um universo de cuidado</span></a>
+        <a className="nav-home" href="#inicio" aria-label="Bella — início"><img className="nav-logo" src={wordmark.url} alt="Bella" /></a>
         <nav className="nav-links" aria-label="Navegação principal">
-          <a href="#sobre"><span>01</span> O universo Bella</a>
-          <a href="#funcionalidades"><span>02</span> O que ela faz</a>
-          <a href="#essencia"><span>03</span> Sua essência</a>
+          {[{ id: "inicio", label: "Início" }, { id: "sobre", label: "O universo Bella" }, { id: "funcionalidades", label: "O que ela faz" }, { id: "essencia", label: "Sua essência" }].map(({ id, label }) => (
+            <a key={id} href={`#${id}`} aria-current={activeSection === id ? "location" : undefined} onClick={() => setActiveSection(id)}>{label}</a>
+          ))}
         </nav>
-        <span className="nav-private"><LockKeyhole aria-hidden="true" /> Privada & única</span>
+        <a className="nav-discover" href="#sobre" onClick={() => setActiveSection("sobre")}>Conheça a Bella <span><ArrowUpRight aria-hidden="true" /></span></a>
         <details className="nav-mobile">
           <summary>Explorar <span aria-hidden="true">+</span></summary>
           <nav aria-label="Navegação para celular">
