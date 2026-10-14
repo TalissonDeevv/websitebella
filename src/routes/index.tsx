@@ -111,8 +111,8 @@ function Index() {
             collaboration={{ title: "A comunidade por perto", description: "Conversas sobre tecnologia, troca de experiências e um espaço para aprender, criar e evoluir junto." }}
             reports={{ title: "Bella acompanha o dia a dia", description: "Recepção, comunicados e organização para que cada assunto encontre seu lugar no servidor." }}
             integrations={{ title: "Encontre o seu espaço", description: "Aprendizado, parcerias e atendimento convivem em uma comunidade com recursos dedicados.", tools: ["Conversas", "Inglês", "Parcerias", "Suporte"] }}
-            insights={{ title: "Cada troca abre possibilidades", description: "Conhecimento compartilhado, projetos e conexões. Uma jornada construída com a participação da comunidade.", values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], forecastFrom: 8 }} />
-          <div className="community-invite"><p>Escritório do Talisson: o espaço oficial de Talisson Souza no Discord. Os diagramas acima são ilustrativos, sem métricas ao vivo.</p><a className="bella-action" href="https://discord.gg/qR59937ECk" target="_blank" rel="noopener noreferrer">Entrar na comunidade <ArrowUpRight aria-hidden="true" /></a></div>
+            insights={{ title: "Cuidado que protege a comunidade", description: "Moderação, auditoria e backups ajudam a manter o servidor organizado e a administração informada.", values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], forecastFrom: 8 }} />
+          <div className="community-invite"><p>Escritório do Talisson: o espaço oficial de Talisson Souza no Discord. Os diagramas apresentam os recursos da comunidade e as camadas de segurança, sem indicadores ao vivo.</p><a className="bella-action" href="https://discord.gg/qR59937ECk" target="_blank" rel="noopener noreferrer">Entrar na comunidade <ArrowUpRight aria-hidden="true" /></a></div>
         </section>
         <FaqAccordion />
       </main>

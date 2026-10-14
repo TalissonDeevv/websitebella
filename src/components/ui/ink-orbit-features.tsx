@@ -9,6 +9,7 @@
 // No dependencies, no assets. React is the only import.
 
 import React from "react"
+import { MessageCircle, BookOpen, Handshake, Headphones, ShieldCheck, ScanSearch, Archive } from "lucide-react"
 
 export type InkFeatureCopy = { title: string; description: string }
 export type InkFeatures = {
@@ -40,40 +41,6 @@ export type InkOrbitFeaturesProps = {
 
 // #region logic
 // #region logic
-function clamp(v: number, a: number, b: number): number {
-  return Math.min(b, Math.max(a, v))
-}
-
-// Smooth line + closed area through values, inside a w×h box.
-function chartPaths(values: number[], w: number, h: number, pad: number) {
-  const n = values.length
-  const lo = Math.min(...values)
-  const hi = Math.max(...values)
-  const span = hi - lo || 1
-  const pts = values.map((v, i) => [
-    pad + (n < 2 ? 0 : (i / (n - 1)) * (w - pad * 2)),
-    h - pad - ((v - lo) / span) * (h - pad * 2),
-  ] as [number, number])
-  let line = ""
-  pts.forEach(([x, y], i) => {
-    if (i === 0) {
-      line = "M" + x.toFixed(1) + "," + y.toFixed(1)
-      return
-    }
-    const [px, py] = pts[i - 1]!
-    const cx = (px + x) / 2
-    line += " C" + cx.toFixed(1) + "," + py.toFixed(1) + " " + cx.toFixed(1) + "," + y.toFixed(1) + " " + x.toFixed(1) + "," + y.toFixed(1)
-  })
-  const area = n ? line + " L" + pts[n - 1]![0].toFixed(1) + "," + (h - pad) + " L" + pts[0]![0].toFixed(1) + "," + (h - pad) + " Z" : ""
-  return { line, area, points: pts }
-}
-
-function nearestIndex(xs: number[], x: number): number {
-  let best = 0
-  for (let i = 1; i < xs.length; i++) if (Math.abs(xs[i]! - x) < Math.abs(xs[best]! - x)) best = i
-  return best
-}
-
 // "Smart *Workflow*\nAutomation" → lines of { text, muted } runs. A literal
 // backslash-n counts too, since that's what "\n" becomes in a JSX attribute.
 function parseTitle(s: string): { text: string; muted: boolean }[][] {
@@ -237,12 +204,7 @@ function Title({ text, className = "ib-h2", as = "h2" }: { text: string; classNa
 }
 
 function Mark({ size = 18 }: { size?: number }) {
-  // the brand glyph: a folded N
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 3a7 7 0 0 1 4 12.74L17 21l-5-3-5 3 1-5.26A7 7 0 0 1 12 3z" fill="currentColor" />
-    </svg>
-  )
+  return <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" fill="currentColor" /></svg>
 }
 
 /* drawn portraits — greyscale, so they sit in the palette */
@@ -300,30 +262,8 @@ function Portrait({ index, size = 38, uid }: { index: number; size?: number; uid
 }
 
 function ToolGlyph({ index }: { index: number }) {
-  const k = index % 4
-  return (
-    <g fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-      {k === 0 && (
-        <>
-          <rect x="-6" y="-6" width="12" height="12" rx="1.5" />
-          <path d="M-6 -2h12M-6 2h12M-1.5 -6v12" />
-        </>
-      )}
-      {k === 1 && <path d="M-6.5 4 -2 -5h4l4.5 9zm2.4 0h9.2M-2 -5l4.5 9" />}
-      {k === 2 && (
-        <>
-          <path d="M-4.5 -6.5h6l3 3v10h-9z" />
-          <path d="M-2 0h4.5M-2 3h4.5" />
-        </>
-      )}
-      {k === 3 && (
-        <>
-          <circle cx="-1" cy="-1" r="4.5" />
-          <path d="M2.4 2.4 6 6" />
-        </>
-      )}
-    </g>
-  )
+  const Icon = [MessageCircle, BookOpen, Handshake, Headphones][index] ?? MessageCircle;
+  return <Icon x={-8} y={-8} width={16} height={16} strokeWidth={1.5} aria-hidden="true" />;
 }
 
 function FlowCard({ brand, features, uid, reduced, inView }: { brand: string; features: InkFeatures; uid: string; reduced: boolean; inView: boolean }) {
@@ -544,64 +484,29 @@ function IntegrationsCard({ copy, reduced }: { copy: InkFeatures["integrations"]
   )
 }
 
-function InsightsCard({ copy, uid, reduced }: { copy: InkFeatures["insights"]; uid: string; reduced: boolean }) {
-  const [ref, inView] = useInView(0.3)
-  const [hover, setHover] = React.useState(-1)
-  const W = 300
-  const H = 130
-  const vals = copy.values.length > 1 ? copy.values : [1, 2]
-  const { line, area, points } = chartPaths(vals, W, H, 14)
-  const split = clamp(copy.forecastFrom, 1, vals.length - 1)
-  const fill = uid + "area"
-  const last = points[points.length - 1]!
-  const i = hover >= 0 ? hover : points.length - 1
-  const p = points[i] ?? points[0]!
-  const onMove = (e: PointerSvgEv) => {
-    const r = e.currentTarget.getBoundingClientRect()
-    setHover(nearestIndex(points.map((q) => q[0]), ((e.clientX - r.left) / r.width) * W))
-  }
-  return (
-    <div className="ib-frame ib-frame-hover" ref={ref as never} data-in={inView}>
-      <Brackets />
-      <div className="ib-card">
-        <svg className="ib-diagram ib-chart" viewBox={"0 0 " + W + " " + (H + 6)} onPointerMove={onMove} onPointerLeave={() => setHover(-1)} tabIndex={0} onFocus={() => setHover(0)} onBlur={() => setHover(-1)} onKeyDown={event => { if (event.key === "ArrowRight" || event.key === "ArrowLeft") { event.preventDefault(); setHover(current => clamp((current < 0 ? 0 : current) + (event.key === "ArrowRight" ? 1 : -1), 0, vals.length - 1)); } }} role="img" aria-label={copy.title + " — ilustração. Use as setas para explorar as etapas."}>
-          <defs>
-            <linearGradient id={fill} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stopColor="var(--ib-ink)" stopOpacity=".12" />
-              <stop offset="1" stopColor="var(--ib-ink)" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-          {[0.25, 0.5, 0.75].map((g) => (
-            <line key={g} x1="14" x2={W - 14} y1={H * g} y2={H * g} stroke="var(--ib-line)" />
-          ))}
-          <path d={area} fill={"url(#" + fill + ")"} />
-          <path d={line} fill="none" stroke="var(--ib-ink)" strokeWidth="1.4" pathLength={1} className="ib-line-draw" opacity=".85" />
-          <line x1={points[split]![0]} x2={points[split]![0]} y1="10" y2={H - 14} stroke="var(--ib-line-strong)" strokeDasharray="2 3" />
-          <text x={points[split]![0] - 4} y={H - 18} textAnchor="end" fontSize="7" fill="var(--ib-faint)" fontFamily="var(--ib-mono)">
-            JORNADA
-          </text>
-          {hover >= 0 && <line x1={p[0]} x2={p[0]} y1="8" y2={H - 14} stroke="var(--ib-ink)" strokeOpacity=".35" />}
-          {!reduced && hover < 0 && <circle cx={last[0]} cy={last[1]} r="7" fill="var(--ib-ink)" opacity=".15" className="ib-glow" />}
-          <circle cx={p[0]} cy={p[1]} r="3.2" fill="var(--ib-raise)" stroke="var(--ib-ink)" strokeWidth="1.5" />
-          <g transform={"translate(" + clamp(p[0], 40, W - 40) + "," + (p[1] < 34 ? p[1] + 22 : p[1] - 12) + ")"}>
-            <rect x="-30" y="-11" width="60" height="15" rx="2" fill="var(--ib-inv)" />
-            <text x="0" y="-1" textAnchor="middle" fontSize="7.5" fill="var(--ib-inv-ink)" fontFamily="var(--ib-mono)">
-              {"ETAPA " + (i + 1)}
-            </text>
+function InsightsCard({ copy, reduced }: { copy: InkFeatures["insights"]; uid: string; reduced: boolean }) {
+  const [active, setActive] = React.useState(0);
+  const safeguards = [
+    { title: "Moderação", icon: ShieldCheck, description: "Regras contra spam, links suspeitos e comportamentos de risco." },
+    { title: "Auditoria", icon: ScanSearch, description: "Registro de ações e alertas sobre mudanças sensíveis do servidor." },
+    { title: "Backups", icon: Archive, description: "Estrutura preservada, com prévia e confirmação antes de restaurar." },
+  ];
+  return <div className="ib-frame ib-frame-hover"><Brackets /><div className="ib-card">
+    <svg className="ib-diagram" viewBox="0 0 300 150" role="group" aria-label="Camadas de segurança do servidor">
+      <rect x="126" y="12" width="48" height="48" rx="12" className="ib-node" />
+      <ShieldCheck x={136} y={22} width={28} height={28} strokeWidth={1.3} style={{ color: "var(--ib-ink)" }} aria-hidden="true" />
+      {safeguards.map(({ title, icon: Icon }, index) => {
+        const x = 52 + index * 98;
+        return <g key={title}>
+          <path d={`M150 60 V78 H${x} V91`} className={`ib-flow${active === index ? " ib-flow-on" : ""}${!reduced && active === index ? " ib-dash" : ""}`} />
+          <g className="ib-tool" tabIndex={0} role="button" aria-label={`Conhecer ${title.toLowerCase()}`} aria-pressed={active === index} onClick={() => setActive(index)} onFocus={() => setActive(index)} onMouseEnter={() => setActive(index)} onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); setActive(index); } }}>
+            <rect x={x - 17} y="91" width="34" height="34" rx="7" className="ib-node" style={{ stroke: active === index ? "var(--ib-ink)" : undefined }} />
+            <Icon x={x - 9} y={99} width={18} height={18} strokeWidth={1.4} style={{ color: "var(--ib-ink)" }} aria-hidden="true" />
+            <text x={x} y="141" textAnchor="middle" fontSize="8" fill="var(--ib-soft)" fontFamily="var(--ib-sans)">{title}</text>
           </g>
-        </svg>
-        <div style={{ marginTop: "auto" }}>
-          <h3>{copy.title}</h3>
-          <p>{copy.description}</p>
-        </div>
-      </div>
-    </div>
-  )
+        </g>;
+      })}
+    </svg>
+    <div className="community-security-copy"><h3>{copy.title}</h3><p>{copy.description}</p><p className="community-security-detail" aria-live="polite">{safeguards[active]?.description}</p></div>
+  </div></div>;
 }
-
-
-
-// event alias lives after the JSX so the 21st CLI tokenizer stays linear
-type PointerSvgEv = React.PointerEvent<SVGSVGElement>
-
-
