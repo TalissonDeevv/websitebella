@@ -5,6 +5,7 @@ import { features } from "@/lib/features";
 import { SystemsPreview } from "@/components/ui/systems-gallery";
 import InkOrbitFeatures from "@/components/ui/ink-orbit-features";
 import { FaqAccordion } from "@/components/ui/faq-chat-accordion";
+import { CreatorCredit } from "@/components/ui/creator-credit";
 import Footer01 from "@/components/ui/footer-01";
 import brand from "@/assets/bella-nyelle.png.asset.json";
 
@@ -87,6 +88,7 @@ function Index() {
           <div className="community-invite"><p>Escritório do Talisson: o espaço oficial de Talisson Souza no Discord. Os diagramas apresentam os recursos da comunidade e as camadas de segurança, sem indicadores ao vivo.</p><a className="bella-action" href="https://discord.gg/qR59937ECk" target="_blank" rel="noopener noreferrer">Entrar na comunidade <ArrowUpRight aria-hidden="true" /></a></div>
         </section>
         <FaqAccordion />
+        <CreatorCredit />
       </main>
 
       <Footer01 />
