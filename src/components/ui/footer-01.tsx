@@ -3,21 +3,21 @@ import wordmark from "@/assets/bella-wordmark.png.asset.json";
 
 const columns = [
   { title: "O universo", links: [
-    { label: "Conheça a Bella", href: "#sobre" },
-    { label: "O que ela faz", href: "#funcionalidades" },
-    { label: "Comunidade", href: "#essencia" },
+    { label: "Conheça a Bella", href: "/universo" },
+    { label: "O que ela faz", href: "/funcionalidades" },
+    { label: "Comunidade", href: "/comunidade" },
   ] },
   { title: "Ela cuida", links: [
-    { label: "Conversas", href: "#cuidado-1" },
-    { label: "Sua rotina", href: "#cuidado-2" },
-    { label: "Segurança", href: "#cuidado-3" },
-    { label: "Comunidade", href: "#cuidado-8" },
+    { label: "Conversas", href: "/funcionalidades#cuidado-1" },
+    { label: "Sua rotina", href: "/funcionalidades#cuidado-2" },
+    { label: "Segurança", href: "/funcionalidades#cuidado-3" },
+    { label: "Comunidade", href: "/funcionalidades#cuidado-8" },
   ] },
   { title: "Mais possibilidades", links: [
-    { label: "Estatísticas", href: "#cuidado-4" },
-    { label: "Parcerias", href: "#cuidado-5" },
-    { label: "Aprendizado", href: "#cuidado-6" },
-    { label: "Atendimento", href: "#cuidado-7" },
+    { label: "Estatísticas", href: "/funcionalidades#cuidado-4" },
+    { label: "Parcerias", href: "/funcionalidades#cuidado-5" },
+    { label: "Aprendizado", href: "/funcionalidades#cuidado-6" },
+    { label: "Atendimento", href: "/funcionalidades#cuidado-7" },
   ] },
 ];
 
@@ -36,7 +36,7 @@ export default function Footer01({ homePath = "" }: { homePath?: string }) {
             {columns.map(column => (
               <div key={column.title}>
                 <h3>{column.title}</h3>
-                <ul>{column.links.map(link => <li key={link.href}><a href={`${homePath}${link.href}`}>{link.label}</a></li>)}</ul>
+                <ul>{column.links.map(link => <li key={link.href}><a href={link.href}>{link.label}</a></li>)}</ul>
               </div>
             ))}
           </nav>

@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Menu, MessageCircle, CalendarHeart, ShieldCheck, ChartNoAxesCombined, Handshake, BookOpen, Headphones, Bell } from "lucide-react";
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
-import wordmark from "@/assets/bella-wordmark.png.asset.json";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { SiteNavigation } from "@/components/site-navigation";
+import { features } from "@/lib/features";
 import { SystemsPreview } from "@/components/ui/systems-gallery";
 import InkOrbitFeatures from "@/components/ui/ink-orbit-features";
 import { FaqAccordion } from "@/components/ui/faq-chat-accordion";
@@ -23,39 +22,12 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const features = [
-  { icon: MessageCircle, title: "Uma boa conversa, sempre", description: "Das dúvidas do dia a dia aos assuntos de tecnologia e negócios, Bella acompanha o contexto e conversa de um jeito natural, próximo e cheio de personalidade.", label: "CONVERSAS & CONHECIMENTO" },
-  { icon: CalendarHeart, title: "Cada detalhe no seu lugar", description: "Recados organizados, compromissos na agenda e lembretes na hora certa. Como assistente executiva de Talisson Souza, ela cuida para que nada importante passe despercebido.", label: "ASSISTÊNCIA EXECUTIVA" },
-  { icon: ShieldCheck, title: "Cuidado que protege", description: "Moderação contra spam, golpes e links suspeitos, auditorias de segurança e backups da estrutura do servidor. Uma comunidade mais tranquila, com atenção aos detalhes.", label: "SEGURANÇA & MODERAÇÃO" },
-  { icon: ChartNoAxesCombined, title: "Os números contam histórias", description: "Estatísticas do site e da comunidade, gráficos, comparativos e relatórios periódicos. Bella acompanha a evolução e transforma os resultados em uma visão mais clara.", label: "ESTATÍSTICAS & RELATÓRIOS" },
-  { icon: Handshake, title: "Crescer é melhor juntos", description: "Parceiros e afiliados acompanham indicações, pontos, níveis e conquistas. Oportunidades, simuladores de ganhos e materiais personalizados dão apoio a cada nova etapa.", label: "PARCEIROS & AFILIADOS" },
-  { icon: BookOpen, title: "Um novo idioma, um novo mundo", description: "Inglês com foco em tecnologia, do nivelamento à conversação. Quizzes, correção de textos, entrevistas simuladas e missões diárias tornam cada conquista parte da jornada.", label: "APRENDIZADO DE INGLÊS" },
-  { icon: Headphones, title: "Pode deixar seu recado", description: "Atendimento em conversas privadas, com organização por assunto e um resumo ao encerrar. Seja uma dúvida, um pedido de suporte ou um orçamento, cada contato recebe atenção.", label: "TICKETS & ATENDIMENTO" },
-  { icon: Bell, title: "Uma presença que acolhe", description: "Boas-vindas personalizadas, anúncios e presença nos canais de voz. Bella recebe quem chega e mantém a comunidade por perto, informada e conectada.", label: "COMUNIDADE & PRESENÇA" },
-];
 
 function Index() {
-  const [activeSection, setActiveSection] = useState("inicio");
   return (
     <div className="bella-page" id="inicio">
       <a className="bella-skip" href="#conteudo">Ir para o conteúdo</a>
-      <header className="bella-nav">
-        <a className="nav-home" href="#inicio" onClick={() => setActiveSection("inicio")} aria-label="Bella — início"><img draggable={false} className="nav-logo" src={wordmark.url} alt="Bella" /></a>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <button className="nav-menu-button" aria-label="Abrir menu de navegação">
-              <Menu aria-hidden="true" />
-            </button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="nav-menu-content" align="end" sideOffset={12}>
-            {[{ id: "inicio", label: "Início" }, { id: "sobre", label: "O universo Bella" }, { id: "funcionalidades", label: "O que ela faz" }, { id: "essencia", label: "Comunidade" }].map(({ id, label }) => (
-              <DropdownMenuItem key={id} asChild>
-                <a href={`#${id}`} aria-current={activeSection === id ? "location" : undefined} onClick={() => setActiveSection(id)}>{label}</a>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </header>
+      <SiteNavigation />
 
       <main id="conteudo" tabIndex={-1}>
         <section className="hero" aria-labelledby="bella-name">
