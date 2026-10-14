@@ -1,3 +1,4 @@
+import { type CSSProperties } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUp, Heart, LockKeyhole, MessageCircle, CalendarHeart, ShieldCheck, ChartNoAxesCombined, Handshake, BookOpen, Headphones, Bell } from "lucide-react";
 import room from "@/assets/bella-room.png.asset.json";
@@ -17,6 +18,8 @@ export const Route = createFileRoute("/")({
     ],
   }),
 });
+
+const heroStyle = { "--scene": `url(${room.url})` } as CSSProperties;
 
 const features = [
   { icon: MessageCircle, title: "Uma boa conversa, sempre", description: "Das dúvidas do dia a dia aos assuntos de tecnologia e negócios, Bella acompanha o contexto e conversa de um jeito natural, próximo e cheio de personalidade.", label: "CONVERSAS & CONHECIMENTO" },
@@ -43,12 +46,11 @@ function Index() {
       </header>
 
       <main>
-        <section className="hero" aria-labelledby="bella-name">
+        <section className="hero" aria-labelledby="bella-name" style={heroStyle}>
           <img className="hero-scene" src={room.url} alt="Bella, de cabelos vermelhos e laços, em seu quarto acolhedor" fetchPriority="high" />
           <div className="hero-copy">
-            <span className="eyebrow">Um jeitinho doce. Infinitas possibilidades.</span>
             <h1 className="hero-brand" id="bella-name"><img src={brand.url} alt="Bella Nyelle" /></h1>
-            <p className="hero-description">Mais que uma assistente, uma presença que cuida. Bella organiza, protege e conecta o universo de Talisson Souza — com inteligência, carinho e um charme só dela.</p>
+            <p className="hero-description">Mais que uma assistente, uma presença que cuida. Bella organiza, protege e conecta o universo de Talisson Souza, com inteligência, carinho e um charme só dela.</p>
             <div className="hero-signature"><Heart aria-hidden="true" /> Feita de cuidado, em cada detalhe.</div>
           </div>
           <div className="hero-bottom">
