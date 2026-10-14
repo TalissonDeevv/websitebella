@@ -528,11 +528,12 @@ main .feature-description { font-size: 15px; color: oklch(0.8 0.015 20); line-he
 /* Images remain clickable but do not participate in native dragging. */
 img { -webkit-user-drag: none; user-select: none; }
 
-/* The same compact section selector is available on desktop and mobile. */
-.nav-select { position: relative; justify-self: center; width: 200px; }
-.nav-select select { appearance: none; width: 100%; border: 1px solid oklch(0.35 0.01 15 / 45%); border-radius: 999px; padding: 12px 42px 12px 20px; background: oklch(0.25 0.006 15); color: var(--foreground); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; color-scheme: dark; transition: background .2s; }
-.nav-select select:hover { background: oklch(0.29 0.008 15); }
-.nav-select select:focus-visible { outline: 2px solid var(--bella-rose); outline-offset: 4px; }
-.nav-select > svg { position: absolute; right: 17px; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; pointer-events: none; color: var(--muted-foreground); }
-@media (max-width: 800px) { .nav-select { justify-self: end; } }
-@media (max-width: 540px) { .nav-select { width: 170px; } .nav-select select { padding: 11px 35px 11px 16px; font-size: 11px; } }
+.bella-nav { grid-template-columns: 1fr auto; }
+.nav-menu-button { justify-self: end; width: 44px; height: 44px; display: grid; place-items: center; border: 0; border-radius: 50%; background: oklch(0.29 0.1 15); color: var(--foreground); cursor: pointer; transition: background .2s, transform .2s; }
+.nav-menu-button svg { width: 22px; height: 22px; }
+.nav-menu-button:hover { background: oklch(0.35 0.12 15); }
+.nav-menu-button:focus-visible { outline: 2px solid var(--bella-rose); outline-offset: 4px; }
+.nav-menu-content { width: 220px; padding: 8px; border-radius: 16px; border-color: var(--border); background: oklch(0.15 0.012 15); color: var(--foreground); box-shadow: 0 16px 40px oklch(0 0 0 / 35%); }
+.nav-menu-content a { padding: 12px 14px; border-radius: 9px; font-size: 12px; cursor: pointer; }
+.nav-menu-content a[aria-current] { color: var(--bella-rose); }
+.nav-menu-content a[data-highlighted] { background: oklch(0.23 0.014 15); color: var(--foreground); }
