@@ -159,8 +159,8 @@
   --ring: var(--primary);
   --bella-rose: oklch(0.77 0.115 20);
   --bella-wine: oklch(0.17 0.035 15);
-  --bella-edge: oklch(0.07 0.01 15 / 78%);
-  --bella-top: oklch(0.07 0.01 15 / 24%);
+  --bella-edge: oklch(0.07 0.01 15 / 68%);
+  --bella-top: oklch(0.07 0.01 15 / 78%);
   --bella-transparent: oklch(0.09 0.018 15 / 0%);
 }
 @theme inline {
@@ -191,8 +191,8 @@ a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
 .private-note { display: flex; align-items: center; gap: 9px; color: var(--bella-rose); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
 .private-note svg { width: 12px; height: 12px; }
 .hero { position: relative; height: min(790px, 90svh); min-height: 640px; display: flex; align-items: center; overflow: hidden; background: var(--background); }
-.hero-scene { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; transform: scaleX(-1); mask-image: linear-gradient(to bottom, #000 85%, transparent); }
-.hero::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, var(--background), var(--bella-transparent) 24%), linear-gradient(180deg, var(--bella-top), var(--bella-transparent) 22%), linear-gradient(90deg, var(--bella-edge), var(--bella-transparent) 28%, var(--bella-transparent) 72%, var(--bella-edge)); }
+.hero-scene { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; transform: scaleX(-1); }
+.hero::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, var(--background), var(--bella-transparent) 24%), linear-gradient(180deg, var(--bella-top), var(--bella-transparent) 40%), linear-gradient(90deg, var(--bella-edge), var(--bella-transparent) 28%, var(--bella-transparent) 72%, var(--bella-edge)); }
 .hero-copy { position: relative; z-index: 1; width: 46%; margin-left: 8%; padding-top: 34px; animation: bella-arrive 1.1s ease both; }
 .eyebrow { color: var(--bella-rose); font-size: 10px; font-weight: 500; letter-spacing: 2.8px; text-transform: uppercase; display: flex; gap: 12px; align-items: center; }
 .eyebrow::before { content: ''; width: 26px; height: 1px; background: var(--primary); }
@@ -273,7 +273,7 @@ a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
   .nav-mobile summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
   .hero { height: 650px; min-height: 0; max-height: none; align-items: end; }
   .hero-scene { left: 0; top: 0; width: 100%; height: 430px; max-width: none; max-height: none; object-fit: cover; object-position: 25% top; transform: scaleX(-1); }
-  .hero::after { height: 430px; background: linear-gradient(0deg, var(--background), var(--bella-transparent) 30%), linear-gradient(180deg, var(--bella-top), var(--bella-transparent) 22%), linear-gradient(90deg, var(--bella-edge), var(--bella-transparent) 28%, var(--bella-transparent) 72%, var(--bella-edge)); }
+  .hero::after { height: 430px; background: linear-gradient(0deg, var(--background), var(--bella-transparent) 30%), linear-gradient(180deg, var(--bella-top), var(--bella-transparent) 40%), linear-gradient(90deg, var(--bella-edge), var(--bella-transparent) 28%, var(--bella-transparent) 72%, var(--bella-edge)); }
   .hero-copy { width: 86%; margin-left: 7%; padding: 0 0 70px; }
   .hero-brand { width: 100%; max-width: 400px; margin: 0; translate: 0; }
   .hero-bottom { left: 7%; right: 7%; bottom: 26px; font-size: 8px; letter-spacing: 1px; }
