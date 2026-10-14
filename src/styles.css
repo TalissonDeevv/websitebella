@@ -179,15 +179,10 @@ a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
 .nav-home { display: flex; align-items: center; justify-self: start; }
 .nav-logo, .footer-wordmark { filter: brightness(0) invert(1); }
 .nav-logo { width: 100px; height: 54px; object-fit: contain; }
-.nav-links { display: flex; align-items: center; border-radius: 999px; background: oklch(0.25 0.006 15); font-size: 12px; }
-.nav-links a { padding: 9px 19px; border-radius: 999px; white-space: nowrap; font-weight: 600; color: var(--muted-foreground); transition: color .2s, background .2s; }
-.nav-links a:hover { color: var(--foreground); background: oklch(0.19 0.006 15); }
-.nav-links a[aria-current] { color: var(--foreground); background: oklch(0.1 0.006 15); }
 .nav-discover { justify-self: end; display: flex; align-items: center; gap: 15px; padding: 4px 4px 4px 17px; border-radius: 999px; background: var(--foreground); color: var(--background); font-size: 11px; font-weight: 600; white-space: nowrap; transition: background .2s; }
 .nav-discover:hover { background: var(--bella-rose); }
 .nav-discover > span { display: grid; place-items: center; width: 32px; height: 32px; background: var(--background); color: var(--foreground); border-radius: 50%; }
 .nav-discover svg { width: 16px; height: 16px; }
-.nav-mobile { display: none; }
 .private-note { display: flex; align-items: center; gap: 9px; color: var(--bella-rose); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
 .private-note svg { width: 12px; height: 12px; }
 .hero { position: relative; height: min(790px, 90svh); min-height: 640px; display: flex; align-items: center; overflow: hidden; background: var(--background); }
@@ -244,8 +239,6 @@ a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
 @media (max-width: 800px) {
   .bella-nav { left: 4%; width: 92%; top: 14px; min-height: 64px; gap: 16px; padding: 6px 14px; grid-template-columns: auto 1fr; }
   .nav-discover { display: none; }
-  .nav-links { justify-self: end; font-size: 11px; }
-  .nav-links a { padding: 8px 12px; }
   .footer-main { grid-template-columns: 1fr; gap: 36px; }
   .footer-about { max-width: 340px; }
   .footer-columns { gap: 20px; }
@@ -260,17 +253,6 @@ a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
 }
 @media (max-width: 540px) {
   .nav-logo { width: 88px; height: 52px; }
-  .nav-links { display: none; }
-  .nav-mobile { display: block; justify-self: end; }
-  .nav-mobile summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 18px; color: var(--foreground); font-size: 10px; letter-spacing: 1px; }
-  .nav-mobile summary::-webkit-details-marker { display: none; }
-  .nav-mobile summary > span { color: var(--bella-rose); font-size: 24px; font-weight: 300; transition: rotate .2s; }
-  .nav-mobile[open] summary > span { rotate: 45deg; }
-  .nav-mobile nav { position: absolute; top: calc(100% + 12px); left: 0; right: 0; padding: 14px 22px; background: var(--background); border: 1px solid var(--border); box-shadow: 0 14px 40px oklch(0 0 0 / 25%); }
-  .nav-mobile nav a { display: flex; align-items: center; gap: 16px; padding: 15px 0; color: var(--bella-rose); font-size: 9px; }
-  .nav-mobile nav a + a { border-top: 1px solid var(--border); }
-  .nav-mobile nav a span { color: var(--foreground); font-size: 12px; }
-  .nav-mobile summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
   .hero { height: 650px; min-height: 0; max-height: none; align-items: end; }
   .hero-scene { left: 0; top: 0; width: 100%; height: 430px; max-width: none; max-height: none; object-fit: cover; object-position: 25% top; transform: scaleX(-1); }
   .hero::after { height: 430px; background: linear-gradient(0deg, var(--background), var(--bella-transparent) 30%), linear-gradient(180deg, var(--bella-top), var(--bella-transparent) 40%), linear-gradient(90deg, var(--bella-edge), var(--bella-transparent) 28%, var(--bella-transparent) 72%, var(--bella-edge)); }
@@ -545,3 +527,12 @@ main .feature-description { font-size: 15px; color: oklch(0.8 0.015 20); line-he
 
 /* Images remain clickable but do not participate in native dragging. */
 img { -webkit-user-drag: none; user-select: none; }
+
+/* The same compact section selector is available on desktop and mobile. */
+.nav-select { position: relative; justify-self: center; width: 200px; }
+.nav-select select { appearance: none; width: 100%; border: 1px solid oklch(0.35 0.01 15 / 45%); border-radius: 999px; padding: 12px 42px 12px 20px; background: oklch(0.25 0.006 15); color: var(--foreground); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; color-scheme: dark; transition: background .2s; }
+.nav-select select:hover { background: oklch(0.29 0.008 15); }
+.nav-select select:focus-visible { outline: 2px solid var(--bella-rose); outline-offset: 4px; }
+.nav-select > svg { position: absolute; right: 17px; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; pointer-events: none; color: var(--muted-foreground); }
+@media (max-width: 800px) { .nav-select { justify-self: end; } }
+@media (max-width: 540px) { .nav-select { width: 170px; } .nav-select select { padding: 11px 35px 11px 16px; font-size: 11px; } }

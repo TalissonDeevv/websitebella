@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, MessageCircle, CalendarHeart, ShieldCheck, ChartNoAxesCombined, Handshake, BookOpen, Headphones, Bell } from "lucide-react";
+import { ArrowDown, ArrowUpRight, ChevronDown, MessageCircle, CalendarHeart, ShieldCheck, ChartNoAxesCombined, Handshake, BookOpen, Headphones, Bell } from "lucide-react";
 import wordmark from "@/assets/bella-wordmark.png.asset.json";
 import { SystemsPreview } from "@/components/ui/systems-gallery";
 import InkOrbitFeatures from "@/components/ui/ink-orbit-features";
@@ -39,21 +39,25 @@ function Index() {
     <div className="bella-page" id="inicio">
       <a className="bella-skip" href="#conteudo">Ir para o conteúdo</a>
       <header className="bella-nav">
-        <a className="nav-home" href="#inicio" aria-label="Bella — início"><img draggable={false} className="nav-logo" src={wordmark.url} alt="Bella" /></a>
-        <nav className="nav-links" aria-label="Navegação principal">
-          {[{ id: "inicio", label: "Início" }, { id: "sobre", label: "O universo Bella" }, { id: "funcionalidades", label: "O que ela faz" }, { id: "essencia", label: "Comunidade" }].map(({ id, label }) => (
-            <a key={id} href={`#${id}`} aria-current={activeSection === id ? "location" : undefined} onClick={() => setActiveSection(id)}>{label}</a>
-          ))}
+        <a className="nav-home" href="#inicio" onClick={() => setActiveSection("inicio")} aria-label="Bella — início"><img draggable={false} className="nav-logo" src={wordmark.url} alt="Bella" /></a>
+        <nav className="nav-select" aria-label="Navegação principal">
+          <select
+            aria-label="Selecionar seção do site"
+            value={activeSection}
+            onChange={(event) => {
+              const section = event.target.value;
+              setActiveSection(section);
+              window.location.hash = section;
+            }}
+          >
+            <option value="inicio">Início</option>
+            <option value="sobre">O universo Bella</option>
+            <option value="funcionalidades">O que ela faz</option>
+            <option value="essencia">Comunidade</option>
+          </select>
+          <ChevronDown aria-hidden="true" />
         </nav>
         <a className="nav-discover" href="#sobre" onClick={() => setActiveSection("sobre")}>Conheça a Bella <span><ArrowUpRight aria-hidden="true" /></span></a>
-        <details className="nav-mobile">
-          <summary>Explorar <span aria-hidden="true">+</span></summary>
-          <nav aria-label="Navegação para celular">
-            <a href="#sobre">01 <span>O universo Bella</span></a>
-            <a href="#funcionalidades">02 <span>O que ela faz</span></a>
-            <a href="#essencia">03 <span>Comunidade</span></a>
-          </nav>
-        </details>
       </header>
 
       <main id="conteudo" tabIndex={-1}>
