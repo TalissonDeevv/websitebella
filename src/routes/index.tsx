@@ -53,6 +53,8 @@ function Index() {
           </div>
         </section>
 
+        <CreatorCredit />
+
         <section className="features content-width" id="funcionalidades" aria-labelledby="features-title">
           <div className="section-heading">
             <div><span className="eyebrow">Pequenos cuidados, grandes possibilidades</span><h2 className="section-title" id="features-title">Ela cuida de <em>tanta coisa.</em></h2></div>
@@ -88,7 +90,6 @@ function Index() {
           <div className="community-invite"><p>Escritório do Talisson: o espaço oficial de Talisson Souza no Discord. Os diagramas apresentam os recursos da comunidade e as camadas de segurança, sem indicadores ao vivo.</p><a className="bella-action" href="https://discord.gg/qR59937ECk" target="_blank" rel="noopener noreferrer">Entrar na comunidade <ArrowUpRight aria-hidden="true" /></a></div>
         </section>
         <FaqAccordion />
-        <CreatorCredit />
       </main>
 
       <Footer01 />
