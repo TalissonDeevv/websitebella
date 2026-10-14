@@ -498,9 +498,9 @@ main .feature-description { font-size: 15px; color: oklch(0.8 0.015 20); line-he
 .system-image-action { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; font-size: 11px; color: var(--muted-foreground); }
 .system-image-action svg { width: 16px; height: 16px; }
 .system-preview { display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; width: 100%; padding: 0; text-align: left; border: 0; background: transparent; color: var(--foreground); cursor: pointer; font: inherit; }
-.system-image { height: 440px; padding: 8px; border: 1px solid var(--border); background: oklch(0.06 0.003 15); transition: border-color .2s; }
-.system-image img { width: 100%; height: 100%; display: block; object-fit: contain; }
-.system-preview:hover .system-image { border-color: var(--bella-rose); }
+.system-image { width: 100%; }
+.system-image img { width: 100%; height: auto; display: block; mix-blend-mode: lighten; }
+.system-preview:hover .system-image-action { color: var(--bella-rose); }
 .system-preview:focus-visible { outline: 2px solid var(--bella-rose); outline-offset: 6px; }
 .system-caption { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 20px; font: 400 26px/1.2 var(--font-display); }
 .system-caption svg { width: 16px; height: 16px; flex-shrink: 0; }
@@ -531,7 +531,6 @@ main .feature-description { font-size: 15px; color: oklch(0.8 0.015 20); line-he
  .system-row:nth-child(even) .system-preview, .system-row:nth-child(even) .system-description { order: initial; }
  .system-description h3 { font-size: 34px; margin: 16px 0; }
  .system-description ul { font-size: 15px; }
- .system-image { height: 360px; }
  .systems-preview { padding: 24px 0 48px; }
  .systems-preview .section-heading { display: block; }
  .systems-page-intro { padding: 48px 0 32px; }
