@@ -5,7 +5,7 @@ const columns = [
   { title: "O universo", links: [
     { label: "Conheça a Bella", href: "#sobre" },
     { label: "O que ela faz", href: "#funcionalidades" },
-    { label: "Sua essência", href: "#essencia" },
+    { label: "Comunidade", href: "#essencia" },
   ] },
   { title: "Ela cuida", links: [
     { label: "Conversas", href: "#cuidado-1" },
@@ -21,13 +21,13 @@ const columns = [
   ] },
 ];
 
-export default function Footer01() {
+export default function Footer01({ homePath = "" }: { homePath?: string }) {
   return (
     <footer className="bella-footer">
       <div className="content-width">
         <div className="footer-main">
           <div className="footer-about">
-            <a href="#inicio" aria-label="Bella — voltar ao início"><img className="footer-wordmark" src={wordmark.url} alt="Bella" loading="lazy" /></a>
+            <a href={`${homePath}#inicio`} aria-label="Bella — voltar ao início"><img className="footer-wordmark" src={wordmark.url} alt="Bella" loading="lazy" /></a>
             <p>Um pequeno universo de inteligência, delicadeza e cuidado. Feito para estar por perto.</p>
             <span className="footer-owner">Um universo de Talisson Souza</span>
             <span className="footer-private"><LockKeyhole aria-hidden="true" /> Privada. Única. Bella.</span>
@@ -36,14 +36,14 @@ export default function Footer01() {
             {columns.map(column => (
               <div key={column.title}>
                 <h3>{column.title}</h3>
-                <ul>{column.links.map(link => <li key={link.href}><a href={link.href}>{link.label}</a></li>)}</ul>
+                <ul>{column.links.map(link => <li key={link.href}><a href={`${homePath}${link.href}`}>{link.label}</a></li>)}</ul>
               </div>
             ))}
           </nav>
         </div>
         <div className="footer-bottom">
           <div className="footer-credits"><span>© {new Date().getFullYear()} Bella Nyelle</span><span className="footer-love"><Heart aria-hidden="true" /> Cuidado em cada detalhe</span></div>
-          <div className="footer-actions"><a href="https://github.com/TalissonDeevv/websitebella" target="_blank" rel="noopener noreferrer">GitHub <ArrowUpRight aria-hidden="true" /></a><a href="#inicio">Voltar ao topo <ArrowUp aria-hidden="true" /></a></div>
+          <div className="footer-actions"><a href="https://github.com/TalissonDeevv/websitebella" target="_blank" rel="noopener noreferrer">GitHub <ArrowUpRight aria-hidden="true" /></a><a href={`${homePath}#inicio`}>Voltar ao topo <ArrowUp aria-hidden="true" /></a></div>
         </div>
         <div className="footer-watermark" aria-hidden="true"><img src={wordmark.url} alt="" loading="lazy" /></div>
       </div>

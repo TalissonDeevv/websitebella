@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Heart, MessageCircle, CalendarHeart, ShieldCheck, ChartNoAxesCombined, Handshake, BookOpen, Headphones, Bell } from "lucide-react";
+import { ArrowDown, ArrowUpRight, MessageCircle, CalendarHeart, ShieldCheck, ChartNoAxesCombined, Handshake, BookOpen, Headphones, Bell } from "lucide-react";
 import room from "@/assets/bella-room.png.asset.json";
 import wordmark from "@/assets/bella-wordmark.png.asset.json";
-import { HeroParallax } from "@/components/ui/hero-parallax";
+import { SystemsPreview } from "@/components/ui/systems-gallery";
+import InkOrbitFeatures from "@/components/ui/ink-orbit-features";
 import { FaqAccordion } from "@/components/ui/faq-chat-accordion";
 import Footer01 from "@/components/ui/footer-01";
 import brand from "@/assets/bella-nyelle.png.asset.json";
@@ -41,7 +42,7 @@ function Index() {
       <header className="bella-nav">
         <a className="nav-home" href="#inicio" aria-label="Bella — início"><img className="nav-logo" src={wordmark.url} alt="Bella" /></a>
         <nav className="nav-links" aria-label="Navegação principal">
-          {[{ id: "inicio", label: "Início" }, { id: "sobre", label: "O universo Bella" }, { id: "funcionalidades", label: "O que ela faz" }, { id: "essencia", label: "Sua essência" }].map(({ id, label }) => (
+          {[{ id: "inicio", label: "Início" }, { id: "sobre", label: "O universo Bella" }, { id: "funcionalidades", label: "O que ela faz" }, { id: "essencia", label: "Comunidade" }].map(({ id, label }) => (
             <a key={id} href={`#${id}`} aria-current={activeSection === id ? "location" : undefined} onClick={() => setActiveSection(id)}>{label}</a>
           ))}
         </nav>
@@ -51,7 +52,7 @@ function Index() {
           <nav aria-label="Navegação para celular">
             <a href="#sobre">01 <span>O universo Bella</span></a>
             <a href="#funcionalidades">02 <span>O que ela faz</span></a>
-            <a href="#essencia">03 <span>Sua essência</span></a>
+            <a href="#essencia">03 <span>Comunidade</span></a>
           </nav>
         </details>
       </header>
@@ -94,7 +95,7 @@ function Index() {
           </div>
         </section>
 
-        <HeroParallax />
+        <SystemsPreview />
 
         <section className="behind-scenes content-width" id="bastidores" aria-labelledby="behind-title">
           <div className="section-heading"><div><span className="eyebrow">Mesmo quando ninguém vê</span><h2 className="section-title" id="behind-title">Nos bastidores,<br /><em>ela continua cuidando.</em></h2></div><p className="panels-intro">O cuidado também está nos detalhes que mantêm a rotina organizada e a plataforma acompanhada.</p></div>
@@ -105,14 +106,13 @@ function Index() {
           </div>
         </section>
 
-        <section className="essence" id="essencia" aria-labelledby="essence-title">
-          <div className="content-width">
-            <Heart className="essence-heart" aria-hidden="true" />
-            <span className="eyebrow">A essência da Bella</span>
-            <h2 id="essence-title">Inteligência para resolver.<br /><em>Delicadeza para estar presente.</em></h2>
-            <p>Entre uma conversa e um lembrete, entre acolher e proteger, existe o que faz a Bella ser Bella: seu jeito único de cuidar.</p>
-            <div className="essence-signature">Com carinho, Bella Nyelle.</div>
-          </div>
+        <section className="community-section content-width" id="essencia" aria-label="Escritório do Talisson no Discord">
+          <InkOrbitFeatures theme="dark" brand="Bella" tag="Escritório do Talisson" title="Um lugar para criar,\n*aprender e se conectar.*"
+            collaboration={{ title: "A comunidade por perto", description: "Conversas sobre tecnologia, troca de experiências e um espaço para aprender, criar e evoluir junto." }}
+            reports={{ title: "Bella acompanha o dia a dia", description: "Recepção, comunicados e organização para que cada assunto encontre seu lugar no servidor." }}
+            integrations={{ title: "Encontre o seu espaço", description: "Aprendizado, parcerias e atendimento convivem em uma comunidade com recursos dedicados.", tools: ["Conversas", "Inglês", "Parcerias", "Suporte"] }}
+            insights={{ title: "Cada troca abre possibilidades", description: "Conhecimento compartilhado, projetos e conexões. Uma jornada construída com a participação da comunidade.", values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], forecastFrom: 8 }} />
+          <div className="community-invite"><p>Escritório do Talisson: o espaço oficial de Talisson Souza no Discord. Os diagramas acima são ilustrativos, sem métricas ao vivo.</p><a className="bella-action" href="https://discord.gg/qR59937ECk" target="_blank" rel="noopener noreferrer">Entrar na comunidade <ArrowUpRight aria-hidden="true" /></a></div>
         </section>
         <FaqAccordion />
       </main>
