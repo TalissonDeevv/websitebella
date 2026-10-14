@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, MessageCircle, CalendarHeart, ShieldCheck, ChartNoAxesCombined, Handshake, BookOpen, Headphones, Bell } from "lucide-react";
-import room from "@/assets/bella-room.png.asset.json";
 import wordmark from "@/assets/bella-wordmark.png.asset.json";
 import { SystemsPreview } from "@/components/ui/systems-gallery";
 import InkOrbitFeatures from "@/components/ui/ink-orbit-features";
@@ -59,7 +58,7 @@ function Index() {
 
       <main id="conteudo" tabIndex={-1}>
         <section className="hero" aria-labelledby="bella-name">
-          <img draggable={false} className="hero-scene" src={room.url} alt="Bella, de cabelos vermelhos e laços, em seu quarto acolhedor" fetchPriority="high" />
+          <img draggable={false} className="hero-scene" src="/images/bella-home.png" alt="Bella Nyelle em um cenário vermelho decorado com laços e fitas" fetchPriority="high" />
           <div className="hero-copy">
             <h1 className="hero-brand" id="bella-name"><img draggable={false} src={brand.url} alt="Bella Nyelle" /></h1>
           </div>

@@ -4,17 +4,20 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, ArrowRight, X } from "lucide-react";
 import { systems, type BellaSystem } from "@/lib/systems";
 
-export function SystemsGallery({ items }: { items: BellaSystem[] }) {
+export function SystemsGallery({ items, navigateToSystems = false }: { items: BellaSystem[]; navigateToSystems?: boolean }) {
   const [selected, setSelected] = useState<BellaSystem | null>(null);
   const trigger = useRef<HTMLButtonElement | null>(null);
   return (
     <Dialog.Root open={selected !== null} onOpenChange={open => { if (!open) setSelected(null); }}>
       <div className="systems-list">{items.map(system => (
-        <article className="system-row" key={system.id}>
-          <Dialog.Trigger asChild><button className="system-preview" onClick={event => { trigger.current = event.currentTarget; setSelected(system); }} aria-label={`Conhecer ${system.title}`}>
+        <article className="system-row" id={`sistema-${system.id}`} key={system.id}>
+          {navigateToSystems ? <Link to="/sistemas" hash={`sistema-${system.id}`} className="system-preview" aria-label={`Conhecer ${system.title} na página de sistemas`}>
+            <div className="system-image"><img draggable={false} src={`/images/paineis/${system.id}.png`} alt={`Painel ${system.title} no Discord`} loading="lazy" width="560" height="540" /></div>
+            <span className="system-image-action">Ver na página de sistemas <ArrowUpRight aria-hidden="true" /></span>
+          </Link> : <Dialog.Trigger asChild><button className="system-preview" onClick={event => { trigger.current = event.currentTarget; setSelected(system); }} aria-label={`Conhecer ${system.title}`}>
             <div className="system-image"><img draggable={false} src={`/images/paineis/${system.id}.png`} alt={`Painel ${system.title} no Discord`} loading="lazy" width="560" height="540" /></div>
             <span className="system-image-action">Ampliar painel <ArrowUpRight aria-hidden="true" /></span>
-          </button></Dialog.Trigger>
+          </button></Dialog.Trigger>}
           <div className="system-description">
             <span className="eyebrow">{system.kind === "public" ? "Para a comunidade" : "Administração"}</span>
             <h3>{system.title}</h3>
@@ -34,7 +37,7 @@ export function SystemsGallery({ items }: { items: BellaSystem[] }) {
 export function SystemsPreview() {
   return <section className="systems-preview content-width" id="paineis" aria-labelledby="systems-preview-title">
     <div className="section-heading"><div><span className="eyebrow">Bella, em ação</span><h2 className="section-title" id="systems-preview-title">Um pouco do que<br /><em>ela faz por aqui.</em></h2></div><p className="panels-intro">Aprender, descobrir e encontrar apoio. Três espaços da Bella para a comunidade.</p></div>
-    <SystemsGallery items={systems.filter(system => system.kind === "public")} />
+    <SystemsGallery items={systems.filter(system => system.kind === "public")} navigateToSystems />
     <div className="systems-preview-bottom"><p>Conheça também alguns dos painéis que organizam os bastidores.</p><Link to="/sistemas" className="bella-action">Conhecer os sistemas <ArrowRight aria-hidden="true" /></Link></div>
   </section>;
 }
