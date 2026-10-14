@@ -12,7 +12,7 @@ export function SystemsGallery({ items }: { items: BellaSystem[] }) {
       <div className="systems-list">{items.map(system => (
         <article className="system-row" key={system.id}>
           <Dialog.Trigger asChild><button className="system-preview" onClick={event => { trigger.current = event.currentTarget; setSelected(system); }} aria-label={`Conhecer ${system.title}`}>
-            <div className="system-image"><img src={`/images/paineis/${system.id}.png`} alt={`Painel ${system.title} no Discord`} loading="lazy" width="560" height="540" /></div>
+            <div className="system-image"><img draggable={false} src={`/images/paineis/${system.id}.png`} alt={`Painel ${system.title} no Discord`} loading="lazy" width="560" height="540" /></div>
             <span className="system-image-action">Ampliar painel <ArrowUpRight aria-hidden="true" /></span>
           </button></Dialog.Trigger>
           <div className="system-description">
@@ -24,7 +24,7 @@ export function SystemsGallery({ items }: { items: BellaSystem[] }) {
         </article>
       ))}</div>
       <Dialog.Portal><Dialog.Overlay className="panel-dialog-overlay" /><Dialog.Content className="panel-dialog-content" onCloseAutoFocus={event => { event.preventDefault(); trigger.current?.focus(); }}>
-        {selected && <><span className="eyebrow">{selected.kind === "public" ? "Para a comunidade" : "Painel administrativo"}</span><Dialog.Title className="panel-dialog-title">{selected.title}</Dialog.Title><Dialog.Description className="panel-dialog-description">{selected.summary}</Dialog.Description><ul>{selected.details.map(detail => <li key={detail}>{detail}</li>)}</ul><img className="panel-dialog-image" src={`/images/paineis/${selected.id}.png`} alt={`Captura completa do painel ${selected.title}`} /><a className="panel-enlarge" href={`/images/paineis/${selected.id}.png`} target="_blank" rel="noopener noreferrer">Ver imagem ampliada <ArrowUpRight aria-hidden="true" /></a><p className="panel-context">Captura ilustrativa de uma configuração do servidor. Os estados e informações podem mudar.</p></>}
+        {selected && <><span className="eyebrow">{selected.kind === "public" ? "Para a comunidade" : "Painel administrativo"}</span><Dialog.Title className="panel-dialog-title">{selected.title}</Dialog.Title><Dialog.Description className="panel-dialog-description">{selected.summary}</Dialog.Description><ul>{selected.details.map(detail => <li key={detail}>{detail}</li>)}</ul><img draggable={false} className="panel-dialog-image" src={`/images/paineis/${selected.id}.png`} alt={`Captura completa do painel ${selected.title}`} /><a className="panel-enlarge" href={`/images/paineis/${selected.id}.png`} target="_blank" rel="noopener noreferrer">Ver imagem ampliada <ArrowUpRight aria-hidden="true" /></a><p className="panel-context">Captura ilustrativa de uma configuração do servidor. Os estados e informações podem mudar.</p></>}
         <Dialog.Close className="panel-dialog-close" aria-label="Fechar resumo"><X aria-hidden="true" /></Dialog.Close>
       </Dialog.Content></Dialog.Portal>
     </Dialog.Root>

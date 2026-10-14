@@ -106,7 +106,11 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body onDragStartCapture={(event) => {
+        if (event.target instanceof Element && event.target.closest("img, picture, svg image")) {
+          event.preventDefault();
+        }
+      }}>
         {children}
         <Scripts />
       </body>

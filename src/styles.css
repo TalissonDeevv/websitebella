@@ -542,3 +542,6 @@ main .feature-description { font-size: 15px; color: oklch(0.8 0.015 20); line-he
 
 .community-security-copy { margin-top: auto; }
 .community-section .community-security-detail { min-height: 3.5em; color: var(--foreground); margin-top: 12px; }
+
+/* Images remain clickable but do not participate in native dragging. */
+img { -webkit-user-drag: none; user-select: none; }

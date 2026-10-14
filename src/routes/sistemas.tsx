@@ -12,7 +12,7 @@ export const Route = createFileRoute("/sistemas")({
 
 function SystemsPage() {
   return <div className="systems-page" id="inicio">
-    <header className="systems-header content-width"><Link to="/" aria-label="Bella — início"><img className="nav-logo" src={wordmark.url} alt="Bella" /></Link><nav aria-label="Navegação dos sistemas"><Link to="/">Início</Link><a href="#publicos">Comunidade</a><a href="#administrativos">Administração</a></nav></header>
+    <header className="systems-header content-width"><Link to="/" aria-label="Bella — início"><img draggable={false} className="nav-logo" src={wordmark.url} alt="Bella" /></Link><nav aria-label="Navegação dos sistemas"><Link to="/">Início</Link><a href="#publicos">Comunidade</a><a href="#administrativos">Administração</a></nav></header>
     <main>
       <div className="systems-page-intro content-width"><Link to="/" className="panel-enlarge"><ArrowLeft aria-hidden="true" /> Voltar para a Bella</Link><h1>Por dentro dos<br /><em>sistemas da Bella.</em></h1><p>Conheça os espaços que a comunidade utiliza e alguns dos painéis que ajudam a administração a organizar o dia a dia.</p></div>
       <section className="systems-page-section content-width" id="publicos" aria-labelledby="public-title"><span className="eyebrow">Para quem faz parte</span><h2 className="section-title" id="public-title">Recursos da <em>comunidade.</em></h2><SystemsGallery items={systems.filter(system => system.kind === "public")} /></section>

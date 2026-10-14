@@ -27,7 +27,7 @@ export default function Footer01({ homePath = "" }: { homePath?: string }) {
       <div className="content-width">
         <div className="footer-main">
           <div className="footer-about">
-            <a href={`${homePath}#inicio`} aria-label="Bella — voltar ao início"><img className="footer-wordmark" src={wordmark.url} alt="Bella" loading="lazy" /></a>
+            <a href={`${homePath}#inicio`} aria-label="Bella — voltar ao início"><img draggable={false} className="footer-wordmark" src={wordmark.url} alt="Bella" loading="lazy" /></a>
             <p>Um pequeno universo de inteligência, delicadeza e cuidado. Feito para estar por perto.</p>
             <span className="footer-owner">Um universo de Talisson Souza</span>
             <span className="footer-private"><LockKeyhole aria-hidden="true" /> Privada. Única. Bella.</span>
@@ -45,7 +45,7 @@ export default function Footer01({ homePath = "" }: { homePath?: string }) {
           <div className="footer-credits"><span>© {new Date().getFullYear()} Bella Nyelle</span><span className="footer-love"><Heart aria-hidden="true" /> Cuidado em cada detalhe</span></div>
           <div className="footer-actions"><a href="https://github.com/TalissonDeevv/websitebella" target="_blank" rel="noopener noreferrer">GitHub <ArrowUpRight aria-hidden="true" /></a><a href={`${homePath}#inicio`}>Voltar ao topo <ArrowUp aria-hidden="true" /></a></div>
         </div>
-        <div className="footer-watermark" aria-hidden="true"><img src={wordmark.url} alt="" loading="lazy" /></div>
+        <div className="footer-watermark" aria-hidden="true"><img draggable={false} src={wordmark.url} alt="" loading="lazy" /></div>
       </div>
     </footer>
   );

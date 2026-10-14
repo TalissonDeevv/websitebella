@@ -40,7 +40,7 @@ function Index() {
     <div className="bella-page" id="inicio">
       <a className="bella-skip" href="#conteudo">Ir para o conteúdo</a>
       <header className="bella-nav">
-        <a className="nav-home" href="#inicio" aria-label="Bella — início"><img className="nav-logo" src={wordmark.url} alt="Bella" /></a>
+        <a className="nav-home" href="#inicio" aria-label="Bella — início"><img draggable={false} className="nav-logo" src={wordmark.url} alt="Bella" /></a>
         <nav className="nav-links" aria-label="Navegação principal">
           {[{ id: "inicio", label: "Início" }, { id: "sobre", label: "O universo Bella" }, { id: "funcionalidades", label: "O que ela faz" }, { id: "essencia", label: "Comunidade" }].map(({ id, label }) => (
             <a key={id} href={`#${id}`} aria-current={activeSection === id ? "location" : undefined} onClick={() => setActiveSection(id)}>{label}</a>
@@ -59,9 +59,9 @@ function Index() {
 
       <main id="conteudo" tabIndex={-1}>
         <section className="hero" aria-labelledby="bella-name">
-          <img className="hero-scene" src={room.url} alt="Bella, de cabelos vermelhos e laços, em seu quarto acolhedor" fetchPriority="high" />
+          <img draggable={false} className="hero-scene" src={room.url} alt="Bella, de cabelos vermelhos e laços, em seu quarto acolhedor" fetchPriority="high" />
           <div className="hero-copy">
-            <h1 className="hero-brand" id="bella-name"><img src={brand.url} alt="Bella Nyelle" /></h1>
+            <h1 className="hero-brand" id="bella-name"><img draggable={false} src={brand.url} alt="Bella Nyelle" /></h1>
           </div>
           <div className="hero-bottom">
             <span>Seu pequeno universo, bem cuidado.</span>
