@@ -3,6 +3,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, Heart, MessageCircle, CalendarHeart, ShieldCheck, ChartNoAxesCombined, Handshake, BookOpen, Headphones, Bell } from "lucide-react";
 import room from "@/assets/bella-room.png.asset.json";
 import wordmark from "@/assets/bella-wordmark.png.asset.json";
+import { HeroParallax } from "@/components/ui/hero-parallax";
+import { FaqAccordion } from "@/components/ui/faq-chat-accordion";
 import Footer01 from "@/components/ui/footer-01";
 import brand from "@/assets/bella-nyelle.png.asset.json";
 
@@ -92,6 +94,17 @@ function Index() {
           </div>
         </section>
 
+        <HeroParallax />
+
+        <section className="behind-scenes content-width" id="bastidores" aria-labelledby="behind-title">
+          <div className="section-heading"><div><span className="eyebrow">Mesmo quando ninguém vê</span><h2 className="section-title" id="behind-title">Nos bastidores,<br /><em>ela continua cuidando.</em></h2></div><p className="panels-intro">O cuidado também está nos detalhes que mantêm a rotina organizada e a plataforma acompanhada.</p></div>
+          <div className="behind-list">
+            <article><span className="behind-number">01 / OBSERVAR</span><h3>Um olhar sobre a plataforma</h3><p>Disponibilidade, páginas, links, formulários e mudanças no repositório. A Bella acompanha o site e reúne evidências para explicar o impacto das alterações.</p></article>
+            <article><span className="behind-number">02 / ORGANIZAR</span><h3>A informação encontra seu destino</h3><p>Feedbacks sincronizados sem repetir os já processados, recados classificados e compromissos com lembretes. Cada assunto chega ao lugar certo.</p></article>
+            <article><span className="behind-number">03 / COMPREENDER</span><h3>Resultados com contexto</h3><p>Relatórios periódicos apresentam indicadores, tendências e recomendações. O Programa de Parceiros também conta com comparativos e histórico de resultados.</p></article>
+          </div>
+        </section>
+
         <section className="essence" id="essencia" aria-labelledby="essence-title">
           <div className="content-width">
             <Heart className="essence-heart" aria-hidden="true" />
@@ -101,6 +114,7 @@ function Index() {
             <div className="essence-signature">Com carinho, Bella Nyelle.</div>
           </div>
         </section>
+        <FaqAccordion />
       </main>
 
       <Footer01 />
