@@ -47,8 +47,6 @@ function Index() {
           <img className="hero-scene" src={room.url} alt="Bella, de cabelos vermelhos e laços, em seu quarto acolhedor" fetchPriority="high" />
           <div className="hero-copy">
             <h1 className="hero-brand" id="bella-name"><img src={brand.url} alt="Bella Nyelle" /></h1>
-            <p className="hero-description">Mais que uma assistente, uma presença que cuida. Bella organiza, protege e conecta o universo de Talisson Souza, com inteligência, carinho e um charme só dela.</p>
-            <div className="hero-signature"><Heart aria-hidden="true" /> Feita de cuidado, em cada detalhe.</div>
           </div>
           <div className="hero-bottom">
             <span>Seu pequeno universo, bem cuidado.</span>

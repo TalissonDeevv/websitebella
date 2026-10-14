@@ -160,7 +160,6 @@
   --bella-rose: oklch(0.77 0.115 20);
   --bella-wine: oklch(0.17 0.035 15);
   --bella-nav: oklch(0.1 0.012 15 / 80%);
-  --bella-shade: oklch(0.09 0.018 15 / 87%);
   --bella-transparent: oklch(0.09 0.018 15 / 0%);
   --bella-shadow: 0 12px 50px oklch(0.03 0.01 15 / 30%);
 }
@@ -177,6 +176,7 @@ a { text-decoration: none; }
 a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
 .bella-page { overflow: clip; }
 .bella-nav { position: absolute; z-index: 10; top: 25px; left: 5%; width: 90%; height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; background: var(--bella-nav); border: 1px solid var(--border); border-radius: 6px; backdrop-filter: blur(20px); box-shadow: var(--bella-shadow); }
+.nav-logo, .footer-wordmark { filter: brightness(0) invert(1); }
 .nav-logo { width: 97px; height: 52px; object-fit: contain; }
 .nav-links { display: flex; gap: 36px; align-items: center; font-size: 12px; }
 .nav-links a { color: var(--muted-foreground); transition: color .2s; }
@@ -184,16 +184,13 @@ a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
 .private-note { display: flex; align-items: center; gap: 9px; color: var(--bella-rose); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
 .private-note svg { width: 12px; height: 12px; }
 .hero { position: relative; height: min(790px, 90svh); min-height: 640px; display: flex; align-items: center; background: var(--background); }
-.hero-scene { position: absolute; top: 16%; left: 6%; width: 88%; height: 84%; object-fit: cover; object-position: center; transform: scaleX(-1); -webkit-mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 80%, transparent), linear-gradient(to right, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 80%, transparent), linear-gradient(to right, transparent, #000 12%, #000 88%, transparent); -webkit-mask-composite: source-in; mask-composite: intersect; }
-.hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--bella-shade) 0%, var(--bella-shade) 10%, var(--bella-transparent) 65%), linear-gradient(0deg, var(--background), var(--bella-transparent) 24%); }
+.hero-scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scaleX(-1); }
+.hero::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, var(--background), var(--bella-transparent) 24%); }
 .hero-copy { position: relative; z-index: 1; width: 46%; margin-left: 8%; padding-top: 34px; animation: bella-arrive 1.1s ease both; }
 .eyebrow { color: var(--bella-rose); font-size: 10px; font-weight: 500; letter-spacing: 2.8px; text-transform: uppercase; display: flex; gap: 12px; align-items: center; }
 .eyebrow::before { content: ''; width: 26px; height: 1px; background: var(--primary); }
-.hero-brand { margin: 0 0 24px; max-width: 440px; translate: -13.3% 0; }
+.hero-brand { margin: 0; width: 100%; max-width: 620px; translate: -13.3% 0; }
 .hero-brand img { width: 100%; height: auto; display: block; }
-.hero-description { color: var(--foreground); font-size: 15px; line-height: 1.95; max-width: 355px; font-weight: 300; }
-.hero-signature { display: flex; align-items: center; gap: 12px; margin-top: 27px; color: var(--bella-rose); font-family: var(--font-display); font-style: italic; font-size: 18px; }
-.hero-signature svg { width: 15px; height: 15px; stroke-width: 1; }
 .hero-bottom { position: absolute; z-index: 2; left: 8%; right: 8%; bottom: 32px; display: flex; align-items: center; justify-content: space-between; color: var(--muted-foreground); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; }
 .hero-bottom a { display: flex; gap: 10px; align-items: center; color: var(--muted-foreground); }
 .hero-bottom svg { width: 12px; height: 12px; }
@@ -236,9 +233,8 @@ a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
   .nav-links { gap: 22px; font-size: 11px; }
   .bella-nav > .private-note { display: none; }
   .hero { min-height: 650px; height: 85svh; max-height: 780px; }
-  .hero-scene { object-position: 40% center; top: 12%; left: 3%; width: 94%; height: 88%; }
+  .hero-scene { object-position: 40% center; }
   .hero-copy { width: 50%; margin-left: 7%; }
-  .hero-description { font-size: 13px; }
   .intro { gap: 35px; }
   .section-title { font-size: 40px; }
   .feature-grid { column-gap: 35px; }
@@ -248,13 +244,11 @@ a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
   .nav-logo { width: 73px; height: 42px; }
   .bella-nav { padding: 0 16px; }
   .nav-links { gap: 17px; font-size: 10px; }
-  .hero { height: 800px; min-height: 0; max-height: none; align-items: end; }
-  .hero-scene { object-position: 25% center; top: 12%; left: 3%; width: 94%; height: 380px; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 26%, #000 56%, transparent), linear-gradient(to right, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(to bottom, transparent, #000 26%, #000 56%, transparent), linear-gradient(to right, transparent, #000 12%, #000 88%, transparent); }
-  .hero::after { background: linear-gradient(0deg, var(--background) 5%, var(--background) 23%, var(--bella-transparent) 73%); }
+  .hero { height: 650px; min-height: 0; max-height: none; align-items: end; }
+  .hero-scene { object-position: 25% center; height: 430px; }
+  .hero::after { height: 430px; background: linear-gradient(0deg, var(--background), var(--bella-transparent) 30%); }
   .hero-copy { width: 86%; margin-left: 7%; padding: 0 0 70px; }
-  .hero-brand { width: 255px; margin: 15px 0 8px; }
-  .hero-description { font-size: 13px; max-width: 310px; line-height: 1.7; }
-  .hero-signature { margin-top: 16px; font-size: 17px; }
+  .hero-brand { width: 100%; max-width: 400px; margin: 0; translate: 0; }
   .hero-bottom { left: 7%; right: 7%; bottom: 26px; font-size: 8px; letter-spacing: 1px; }
   .content-width { width: 86%; }
   .intro { padding: 36px 0; grid-template-columns: 1fr; gap: 10px; }
