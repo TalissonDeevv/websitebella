@@ -1,4 +1,3 @@
-import { type CSSProperties } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUp, Heart, LockKeyhole, MessageCircle, CalendarHeart, ShieldCheck, ChartNoAxesCombined, Handshake, BookOpen, Headphones, Bell } from "lucide-react";
 import room from "@/assets/bella-room.png.asset.json";
@@ -18,8 +17,6 @@ export const Route = createFileRoute("/")({
     ],
   }),
 });
-
-const heroStyle = { "--scene": `url(${room.url})` } as CSSProperties;
 
 const features = [
   { icon: MessageCircle, title: "Uma boa conversa, sempre", description: "Das dúvidas do dia a dia aos assuntos de tecnologia e negócios, Bella acompanha o contexto e conversa de um jeito natural, próximo e cheio de personalidade.", label: "CONVERSAS & CONHECIMENTO" },
@@ -46,7 +43,7 @@ function Index() {
       </header>
 
       <main>
-        <section className="hero" aria-labelledby="bella-name" style={heroStyle}>
+        <section className="hero" aria-labelledby="bella-name">
           <img className="hero-scene" src={room.url} alt="Bella, de cabelos vermelhos e laços, em seu quarto acolhedor" fetchPriority="high" />
           <div className="hero-copy">
             <h1 className="hero-brand" id="bella-name"><img src={brand.url} alt="Bella Nyelle" /></h1>
