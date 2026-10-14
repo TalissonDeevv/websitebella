@@ -237,7 +237,8 @@ a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
   .nav-links { gap: 22px; font-size: 11px; }
   .bella-nav > .private-note { display: none; }
   .hero { min-height: 650px; height: 85svh; max-height: 780px; }
-  .hero-scene { object-position: 38% center; }
+  .hero-scene { object-position: 38% center; transform: scaleX(-1) scale(.86); }
+  .hero::before { background-position: 38% center; inset: -14%; }
   .hero-copy { width: 50%; margin-left: 7%; }
   .hero-brand { margin-top: 25px; }
   .hero-description { font-size: 13px; }
@@ -251,7 +252,8 @@ a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
   .bella-nav { padding: 0 16px; }
   .nav-links { gap: 17px; font-size: 10px; }
   .hero { height: 760px; min-height: 0; max-height: none; align-items: end; }
-  .hero-scene { object-position: 25% top; height: 540px; }
+  .hero-scene { object-position: 25% top; height: 540px; transform: scaleX(-1) scale(.9); }
+  .hero::before { background-position: 25% top; inset: -18%; }
   .hero::after { background: linear-gradient(0deg, var(--background) 5%, var(--background) 23%, var(--bella-transparent) 73%); }
   .hero-copy { width: 86%; margin-left: 7%; padding: 0 0 85px; }
   .hero-copy .eyebrow { font-size: 8px; letter-spacing: 2px; }
