@@ -35,6 +35,7 @@ function Index() {
   const [activeSection, setActiveSection] = useState("inicio");
   return (
     <div className="bella-page" id="inicio">
+      <a className="bella-skip" href="#conteudo">Ir para o conteúdo</a>
       <header className="bella-nav">
         <a className="nav-home" href="#inicio" aria-label="Bella — início"><img className="nav-logo" src={wordmark.url} alt="Bella" /></a>
         <nav className="nav-links" aria-label="Navegação principal">
@@ -53,7 +54,7 @@ function Index() {
         </details>
       </header>
 
-      <main>
+      <main id="conteudo" tabIndex={-1}>
         <section className="hero" aria-labelledby="bella-name">
           <img className="hero-scene" src={room.url} alt="Bella, de cabelos vermelhos e laços, em seu quarto acolhedor" fetchPriority="high" />
           <div className="hero-copy">
@@ -71,7 +72,7 @@ function Index() {
             <h2 className="section-title" id="sobre-title">Um coração atencioso.<br /><em>Uma mente brilhante.</em></h2>
           </div>
           <div className="intro-text">
-            <p>Bella Nyelle nasceu para tornar a rotina mais leve e a comunidade mais acolhedora. No Discord, ela une a organização de uma assistente executiva à delicadeza de quem realmente presta atenção.</p>
+            <p className="intro-lead">Bella Nyelle nasceu para tornar a rotina mais leve e a comunidade mais acolhedora. No Discord, ela une a organização de uma assistente executiva à delicadeza de quem realmente presta atenção.</p>
             <p>Este é um universo particular: <strong>Bella é uma bot privada</strong>, dedicada à plataforma e à comunidade de Talisson Souza. Não está disponível para ser adicionada a outros servidores.</p>
           </div>
         </section>
@@ -85,7 +86,7 @@ function Index() {
             {features.map(({ icon: Icon, title, description, label }, index) => (
               <article className="feature-item" id={`cuidado-${index + 1}`} key={title}>
                 <Icon className="feature-icon" aria-hidden="true" />
-                <div><h3 className="feature-title">{title}</h3><p className="feature-description">{description}</p><div className="feature-index">0{index + 1} / {label}</div></div>
+                <div><div className="feature-index"><span className="feature-number">0{index + 1}</span>{label}</div><h3 className="feature-title">{title}</h3><p className="feature-description">{description}</p></div>
               </article>
             ))}
           </div>
