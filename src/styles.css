@@ -170,13 +170,13 @@
   --color-bella-rose: var(--bella-rose);
   --color-bella-wine: var(--bella-wine);
 }
-html { scroll-behavior: smooth; scroll-padding-top: 115px; }
+html { scroll-behavior: smooth; scroll-padding-top: 95px; }
 body { margin: 0; font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
 ::selection { background: var(--primary); color: var(--primary-foreground); }
 a { text-decoration: none; }
 a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
 .bella-page { overflow: clip; }
-.bella-nav { position: absolute; z-index: 10; top: 25px; left: 5%; width: 90%; height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; background: var(--bella-nav); border: 1px solid var(--border); border-radius: 6px; backdrop-filter: blur(20px); box-shadow: var(--bella-shadow); }
+.bella-nav { position: absolute; z-index: 10; top: 20px; left: 6%; width: 88%; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 26px; background: var(--bella-nav); border: 1px solid var(--border); border-radius: 6px; backdrop-filter: blur(20px); box-shadow: var(--bella-shadow); }
 .nav-logo { width: 80px; height: 43px; object-fit: contain; }
 .nav-links { display: flex; gap: 32px; align-items: center; font-size: 11px; }
 .nav-links a { color: var(--muted-foreground); transition: color .2s; }
@@ -231,8 +231,8 @@ a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
 @keyframes bella-arrive { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 @media (min-width: 1600px) { .hero-scene { object-position: center 55%; } .hero-copy { margin-left: max(8%, calc((100% - 1110px) / 2)); } }
 @media (max-width: 800px) {
-  .bella-nav { left: 5%; width: 90%; padding: 0 20px; height: 62px; top: 18px; }
-  .nav-links { gap: 22px; font-size: 11px; }
+  .bella-nav { left: 5%; width: 90%; padding: 0 18px; height: 50px; top: 14px; }
+  .nav-links { gap: 20px; font-size: 10px; }
   .bella-nav > .private-note { display: none; }
   .hero { min-height: 650px; height: 85svh; max-height: 780px; }
   .hero-scene { object-position: 40% center; top: 12%; left: 3%; width: 94%; height: 88%; }
