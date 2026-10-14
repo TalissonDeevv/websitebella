@@ -248,12 +248,13 @@ a:focus-visible { outline: 2px solid var(--primary); outline-offset: 6px; }
   .nav-logo { width: 73px; height: 42px; }
   .bella-nav { padding: 0 16px; }
   .nav-links { gap: 17px; font-size: 10px; }
-  .hero { height: 790px; min-height: 0; max-height: none; align-items: end; }
-  .hero-scene { object-position: 25% top; top: 4%; left: 3%; width: 94%; height: 430px; }
+  .hero { height: 800px; min-height: 0; max-height: none; align-items: end; }
+  .hero-scene { object-position: 25% center; top: 12%; left: 3%; width: 94%; height: 380px; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 26%, #000 56%, transparent), linear-gradient(to right, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(to bottom, transparent, #000 26%, #000 56%, transparent), linear-gradient(to right, transparent, #000 12%, #000 88%, transparent); }
+  .hero-scene { transform: scaleX(-1); }
   .hero::after { background: linear-gradient(0deg, var(--background) 5%, var(--background) 23%, var(--bella-transparent) 73%); }
-  .hero-copy { width: 86%; margin-left: 7%; padding: 0 0 78px; }
+  .hero-copy { width: 86%; margin-left: 7%; padding: 0 0 70px; }
   .hero-brand { width: 255px; margin: 15px 0 8px; }
-  .hero-description { font-size: 13px; max-width: 310px; line-height: 1.8; }
+  .hero-description { font-size: 13px; max-width: 310px; line-height: 1.7; }
   .hero-signature { margin-top: 16px; font-size: 17px; }
   .hero-bottom { left: 7%; right: 7%; bottom: 26px; font-size: 8px; letter-spacing: 1px; }
   .content-width { width: 86%; }
