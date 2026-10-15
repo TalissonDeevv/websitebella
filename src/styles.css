@@ -669,3 +669,5 @@ main .intro-text .intro-lead { font-size: 22px; line-height: 1.75; }
 .resource-questions summary:focus-visible { outline: 2px solid var(--bella-rose); outline-offset: 6px; }
 @media (max-width: 800px) { .resource-guide-sections article { grid-template-columns: 1fr; gap: 24px; } }
 @media (max-width: 540px) { .resource-guide { padding-bottom: 48px; } .resource-guide-sections article { padding: 32px 0; } .resource-guide-sections p { font-size: 17px; } .resource-examples, .resource-questions { margin-top: 40px; } }
+
+.resource-overview-copy .community-overview-paragraph { margin-top: 24px; }
