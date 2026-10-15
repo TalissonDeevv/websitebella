@@ -5,9 +5,9 @@ export const publicResources = [
     "title": "Uma boa conversa.",
     "emphasis": "Com atenção ao contexto.",
     "intro": "No Discord, a Bella ajuda com dúvidas e acompanha conversas sobre tecnologia, programação, negócios e assuntos do dia a dia.",
-    "image": "/images/bella-retrato-rubro.png",
-    "alt": "Retrato da Bella Nyelle em tons de vermelho",
-    "caption": "Bella Nyelle, a presença que acompanha as conversas da comunidade.",
+    "image": "/images/paineis/conversas-atividade.png",
+    "alt": "Registros da Bella relacionados à atividade de mensagens no Discord.",
+    "caption": "Exemplo de registros de atividade, não de uma conversa com a Bella.",
     "summary": "Você chama. A Bella acompanha.",
     "body": "Mencione a Bella ou responda a uma mensagem dela para iniciar a conversa. Ela considera o contexto recente e o conhecimento oficial disponível sobre o site e a comunidade para orientar suas respostas.",
     "steps": [
@@ -28,7 +28,9 @@ export const publicResources = [
         "Quando o assunto pede acompanhamento individual, a central de atendimento oferece um espaço privado com a equipe configurada."
       ]
     ],
-    "note": "Conversar com a Bella não libera funções administrativas. Pedidos que exigem acesso restrito continuam sujeitos às permissões de cada pessoa."
+    "note": "Conversar com a Bella não libera funções administrativas. Pedidos que exigem acesso restrito continuam sujeitos às permissões de cada pessoa.",
+    "imageWidth": 468,
+    "imageHeight": 528
   },
   {
     "slug": "rotina",
@@ -36,9 +38,9 @@ export const publicResources = [
     "title": "Cada detalhe",
     "emphasis": "no seu lugar.",
     "intro": "Recados, lembretes, compromissos e comunicados fazem parte da assistência executiva que a Bella oferece a Talisson Souza.",
-    "image": "/images/bella-home.png",
-    "alt": "Bella Nyelle em seu cenário vermelho",
-    "caption": "Uma assistente dedicada ao universo de Talisson Souza.",
+    "image": "/images/paineis/rotina-registro.png",
+    "alt": "Registro histórico de uma ação executiva da Bella no Discord.",
+    "caption": "Registro histórico de uma tentativa de ação executiva. A captura mostra uma falha registrada, não uma operação concluída.",
     "summary": "Organização para o dia a dia.",
     "body": "A Bella ajuda a reunir recados, acompanhar solicitações de agendamento e lembrar compromissos. Os anúncios e as rotinas executivas seguem as orientações e os acessos definidos pelo proprietário.",
     "steps": [
@@ -59,7 +61,9 @@ export const publicResources = [
         "A Bella também prepara anúncios e comunicados a partir das orientações autorizadas."
       ]
     ],
-    "note": "A assistência executiva é dedicada a Talisson. Ela não é uma agenda pública nem concede aos membros acesso à gestão de compromissos ou anúncios."
+    "note": "A assistência executiva é dedicada a Talisson. Ela não é uma agenda pública nem concede aos membros acesso à gestão de compromissos ou anúncios.",
+    "imageWidth": 471,
+    "imageHeight": 471
   },
   {
     "slug": "seguranca",
@@ -67,9 +71,9 @@ export const publicResources = [
     "title": "Cuidado que protege.",
     "emphasis": "Atenção aos detalhes.",
     "intro": "A Bella apoia a administração na moderação e no acompanhamento da segurança do servidor, com auditoria, registros e backups estruturais.",
-    "image": "/images/bella-retrato-rubro.png",
-    "alt": "Bella Nyelle em retrato vermelho",
-    "caption": "Ilustração da Bella. Os painéis e as informações internas de segurança não são exibidos nesta página.",
+    "image": "/images/paineis/seguranca-monitoramento.png",
+    "alt": "Exemplo de acompanhamento da saúde da plataforma pela Bella.",
+    "caption": "Registro de acompanhamento da plataforma. Os valores são de uma captura anterior, não indicadores ao vivo.",
     "summary": "Proteção com acompanhamento.",
     "body": "Regras de moderação ajudam a lidar com spam, links suspeitos e comportamentos de risco. A administração também conta com análises de segurança e registros para acompanhar o que precisa de atenção.",
     "steps": [
@@ -90,7 +94,9 @@ export const publicResources = [
         "Backups preservam recursos estruturais suportados. A restauração apresenta uma prévia e exige confirmação em duas etapas."
       ]
     ],
-    "note": "O backup não copia conversas comuns. As ferramentas administrativas são restritas às pessoas autorizadas; esta página não apresenta configurações, dados internos ou instruções operacionais."
+    "note": "O backup não copia conversas comuns. As ferramentas administrativas são restritas às pessoas autorizadas; esta página não apresenta configurações, dados internos ou instruções operacionais.",
+    "imageWidth": 473,
+    "imageHeight": 553
   },
   {
     "slug": "estatisticas",
@@ -98,9 +104,9 @@ export const publicResources = [
     "title": "Os números",
     "emphasis": "contam histórias.",
     "intro": "A Bella reúne indicadores da plataforma e da comunidade em painéis e relatórios, para que Talisson acompanhe a evolução com mais contexto.",
-    "image": "/images/bella-retrato-rubro.png",
-    "alt": "Retrato da Bella Nyelle",
-    "caption": "Ilustração da Bella. Os relatórios reais e seus indicadores são de acesso restrito.",
+    "image": "/images/paineis/seguranca-monitoramento.png",
+    "alt": "Relatório da Bella sobre acompanhamento da plataforma.",
+    "caption": "Exemplo de relatório de acompanhamento. Os valores pertencem à captura e não representam o estado atual da plataforma.",
     "summary": "Informação para entender a evolução.",
     "body": "As consultas permitem acompanhar períodos e aspectos diferentes do site e do servidor. Os relatórios organizam os resultados em gráficos, comparativos e resumos, respeitando os acessos de cada área.",
     "steps": [
@@ -121,7 +127,9 @@ export const publicResources = [
         "Publicações periódicas podem ser organizadas pelo responsável nos canais autorizados."
       ]
     ],
-    "note": "Os painéis de estatísticas são reservados a Talisson. Este site apresenta o funcionamento geral e não publica indicadores internos, dados de membros ou métricas ao vivo."
+    "note": "Os painéis de estatísticas são reservados a Talisson. Este site apresenta o funcionamento geral e não publica indicadores internos, dados de membros ou métricas ao vivo.",
+    "imageWidth": 473,
+    "imageHeight": 553
   },
   {
     "slug": "parcerias",
@@ -152,7 +160,9 @@ export const publicResources = [
         "Perfil, histórico e recursos de evolução ajudam a acompanhar resultados. Simulações de ganhos são estimativas, sem promessa de pagamento."
       ]
     ],
-    "note": "Informações individuais, simulações e materiais personalizados seguem os acessos do programa. Dados de outros parceiros e os controles administrativos não são exibidos aqui."
+    "note": "Informações individuais, simulações e materiais personalizados seguem os acessos do programa. Dados de outros parceiros e os controles administrativos não são exibidos aqui.",
+    "imageWidth": 1672,
+    "imageHeight": 941
   },
   {
     "slug": "aprendizado",
@@ -183,7 +193,9 @@ export const publicResources = [
         "Perfil, XP, níveis, sequência de estudos e conquistas ajudam a acompanhar seu progresso e retomar as atividades."
       ]
     ],
-    "note": "O nivelamento é uma estimativa para orientar o aprendizado, não uma certificação oficial de proficiência."
+    "note": "O nivelamento é uma estimativa para orientar o aprendizado, não uma certificação oficial de proficiência.",
+    "imageWidth": 537,
+    "imageHeight": 291
   },
   {
     "slug": "atendimento",
@@ -214,6 +226,8 @@ export const publicResources = [
         "Quando o atendimento termina, a Bella prepara um resumo para apoiar o registro e o acompanhamento do caso."
       ]
     ],
-    "note": "A abertura de um ticket não confirma um orçamento nem um horário de reunião. O atendimento é compartilhado com a equipe responsável configurada para esse espaço."
+    "note": "A abertura de um ticket não confirma um orçamento nem um horário de reunião. O atendimento é compartilhado com a equipe responsável configurada para esse espaço.",
+    "imageWidth": 539,
+    "imageHeight": 486
   }
 ] as const;

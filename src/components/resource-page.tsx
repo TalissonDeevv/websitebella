@@ -6,7 +6,7 @@ export function ResourcePage({ slug }: { slug: typeof publicResources[number]["s
   const resource = publicResources.find(item => item.slug === slug)!;
   return <ContentPage tag={resource.label} title={resource.title} emphasis={resource.emphasis} intro={resource.intro}>
     <section className="resource-overview content-width" aria-labelledby="resource-overview-title">
-      <figure className="resource-figure"><img draggable={false} src={resource.image} alt={resource.alt} width="1000" height="700" /><figcaption>{resource.caption}</figcaption></figure>
+      <figure className="resource-figure"><img draggable={false} src={resource.image} alt={resource.alt} width={resource.imageWidth} height={resource.imageHeight} /><figcaption>{resource.caption} <a href={resource.image} target="_blank" rel="noopener noreferrer">Ver imagem em tamanho real <ArrowUpRight aria-hidden="true" /></a></figcaption></figure>
       <div className="resource-overview-copy"><span className="eyebrow">Como funciona</span><h2 className="section-title" id="resource-overview-title">{resource.summary}</h2><p>{resource.body}</p></div>
     </section>
     <section className="resource-steps content-width" aria-label={`Como funciona: ${resource.label}`}><NumberedCards items={resource.steps.map(([title, content]) => ({ title, content: <p>{content}</p> }))} /><p className="resource-note">{resource.note}</p></section>
