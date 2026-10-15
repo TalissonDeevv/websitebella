@@ -86,12 +86,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Bella Nyelle" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:image", content: loaderData?.image },
-      { property: "og:image:width", content: "1672" },
-      { property: "og:image:height", content: "941" },
-      { property: "og:image:alt", content: "Bella Nyelle em um cenário vermelho com laços e fitas" },
+      { property: "og:image:width", content: "1669" },
+      { property: "og:image:height", content: "942" },
+      { property: "og:image:alt", content: "Retrato da Bella Nyelle em tons de vermelho" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: loaderData?.image },
-      { name: "twitter:image:alt", content: "Bella Nyelle em um cenário vermelho com laços e fitas" },
+      { name: "twitter:image:alt", content: "Retrato da Bella Nyelle em tons de vermelho" },
     ],
     links: [
       {

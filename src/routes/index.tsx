@@ -12,9 +12,9 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Bella Nyelle — Uma presença que cuida" },
+      { title: "Bella Nyelle, uma presença que cuida" },
       { name: "description", content: "Conheça Bella Nyelle: a bot privada de Talisson Souza que une assistência, cuidado com a comunidade, segurança e aprendizado no Discord." },
-      { property: "og:title", content: "Bella Nyelle — Uma presença que cuida" },
+      { property: "og:title", content: "Bella Nyelle, uma presença que cuida" },
       { property: "og:description", content: "Um jeitinho doce. Um mundo de possibilidades. Conheça a assistente privada Bella e tudo o que ela faz pela comunidade." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
