@@ -29,7 +29,7 @@ export default function Footer01({ homePath = "" }: { homePath?: string }) {
           <div className="footer-about">
             <a href={`${homePath}#inicio`} aria-label="Bella — voltar ao início"><img draggable={false} className="footer-wordmark" src={wordmark.url} alt="Bella" loading="lazy" /></a>
             <p>Um pequeno universo de inteligência, delicadeza e cuidado. Feito para estar por perto.</p>
-            <span className="footer-owner">Um universo de Talisson Souza</span>
+            <span className="footer-owner">Bella Nyelle foi criada por <a href="https://www.talissonsouza.com.br" target="_blank" rel="noopener noreferrer">Talisson Souza</a>.</span>
             <span className="footer-private"><LockKeyhole aria-hidden="true" /> Privada. Única. Bella.</span>
           </div>
           <nav className="footer-columns" aria-label="Navegação do rodapé">
