@@ -137,9 +137,9 @@ export const publicResources = [
     "title": "Crescer é melhor",
     "emphasis": "quando é junto.",
     "intro": "O Programa de Parceiros oferece um espaço para inscrições, materiais, indicações e acompanhamento dos resultados de cada participante.",
-    "image": "/images/bella-home.png",
-    "alt": "Bella Nyelle em um cenário vermelho com laços",
-    "caption": "Bella acompanha o Programa de Parceiros no Escritório do Talisson.",
+    "image": "/images/paineis/parcerias-publico.png",
+    "alt": "Painel público do Programa de Parceiros e Afiliados da Bella no Discord",
+    "caption": "Painel público de apresentação e inscrição no Programa de Parceiros e Afiliados.",
     "summary": "Da inscrição ao acompanhamento.",
     "body": "O programa reúne os recursos do parceiro em uma área dedicada no Discord. Cada participante acompanha suas próprias informações e encontra materiais e suporte relacionados ao programa.",
     "steps": [
@@ -161,8 +161,8 @@ export const publicResources = [
       ]
     ],
     "note": "Informações individuais, simulações e materiais personalizados seguem os acessos do programa. Dados de outros parceiros e os controles administrativos não são exibidos aqui.",
-    "imageWidth": 1672,
-    "imageHeight": 941
+    "imageWidth": 535,
+    "imageHeight": 470
   },
   {
     "slug": "aprendizado",
