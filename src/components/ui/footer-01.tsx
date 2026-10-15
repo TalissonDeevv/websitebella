@@ -1,4 +1,4 @@
-import { ArrowUp, ArrowUpRight, Heart, LockKeyhole } from "lucide-react";
+import { ArrowUp, Heart, LockKeyhole } from "lucide-react";
 import wordmark from "@/assets/bella-wordmark.png.asset.json";
 
 const columns = [
@@ -43,7 +43,7 @@ export default function Footer01({ homePath = "" }: { homePath?: string }) {
         </div>
         <div className="footer-bottom">
           <div className="footer-credits"><span>© {new Date().getFullYear()} Bella Nyelle</span><span className="footer-love"><Heart aria-hidden="true" /> Cuidado em cada detalhe</span></div>
-          <div className="footer-actions"><a href="https://github.com/TalissonDeevv/websitebella" target="_blank" rel="noopener noreferrer">GitHub <ArrowUpRight aria-hidden="true" /></a><a href={`${homePath}#inicio`}>Voltar ao topo <ArrowUp aria-hidden="true" /></a></div>
+          <div className="footer-actions"><a href={`${homePath}#inicio`}>Voltar ao topo <ArrowUp aria-hidden="true" /></a></div>
         </div>
         <div className="footer-watermark" aria-hidden="true"><img draggable={false} src={wordmark.url} alt="" loading="lazy" /></div>
       </div>

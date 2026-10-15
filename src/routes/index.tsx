@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { SiteNavigation } from "@/components/site-navigation";
-import { features } from "@/lib/features";
+import { FeatureCards } from "@/components/ui/feature-cards";
+import { NumberedCards } from "@/components/ui/numbered-cards";
+import { Stats } from "@/components/ui/stats-section-with-text";
 import { SystemsPreview } from "@/components/ui/systems-gallery";
 import { CommunityFeatures } from "@/components/ui/community-features";
 import { FaqAccordion } from "@/components/ui/faq-chat-accordion";
@@ -53,30 +55,25 @@ function Index() {
         </section>
 
 
+        <Stats />
+
         <section className="features content-width" id="funcionalidades" aria-labelledby="features-title">
           <div className="section-heading">
             <div><span className="eyebrow">Pequenos cuidados, grandes possibilidades</span><h2 className="section-title" id="features-title">Ela cuida de <em>tanta coisa.</em></h2></div>
             <span className="section-aside">E coloca um pouquinho de si em tudo.</span>
           </div>
-          <div className="feature-grid">
-            {features.map(({ icon: Icon, title, description, label }, index) => (
-              <article className="feature-item" id={`cuidado-${index + 1}`} key={title}>
-                <Icon className="feature-icon" aria-hidden="true" />
-                <div><div className="feature-index"><span className="feature-number">0{index + 1}</span>{label}</div><h3 className="feature-title">{title}</h3><p className="feature-description">{description}</p></div>
-              </article>
-            ))}
-          </div>
+          <FeatureCards />
         </section>
 
         <SystemsPreview />
 
         <section className="behind-scenes content-width" id="bastidores" aria-labelledby="behind-title">
           <div className="section-heading"><div><span className="eyebrow">Mesmo quando ninguém vê</span><h2 className="section-title" id="behind-title">Nos bastidores,<br /><em>ela continua cuidando.</em></h2></div><p className="panels-intro">O cuidado também está nos detalhes que mantêm a rotina organizada e a plataforma acompanhada.</p></div>
-          <div className="behind-list">
-            <article><span className="behind-number">01 / OBSERVAR</span><h3>Um olhar sobre a plataforma</h3><p>Disponibilidade, páginas, links, formulários e mudanças no repositório. A Bella acompanha o site e reúne evidências para explicar o impacto das alterações.</p></article>
-            <article><span className="behind-number">02 / ORGANIZAR</span><h3>A informação encontra seu destino</h3><p>Feedbacks sincronizados sem repetir os já processados, recados classificados e compromissos com lembretes. Cada assunto chega ao lugar certo.</p></article>
-            <article><span className="behind-number">03 / COMPREENDER</span><h3>Resultados com contexto</h3><p>Relatórios periódicos apresentam indicadores, tendências e recomendações. O Programa de Parceiros também conta com comparativos e histórico de resultados.</p></article>
-          </div>
+          <NumberedCards items={[
+            { title: "Um olhar sobre a plataforma", content: <p>Disponibilidade, páginas, links, formulários e mudanças no repositório. A Bella acompanha o site e reúne evidências para explicar o impacto das alterações.</p> },
+            { title: "A informação encontra seu destino", content: <p>Feedbacks sincronizados sem repetir os já processados, recados classificados e compromissos com lembretes. Cada assunto chega ao lugar certo.</p> },
+            { title: "Resultados com contexto", content: <p>Relatórios periódicos apresentam indicadores, tendências e recomendações. O Programa de Parceiros também conta com comparativos e histórico de resultados.</p> },
+          ]} />
         </section>
 
         <CommunityFeatures />
