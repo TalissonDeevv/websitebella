@@ -1,3 +1,4 @@
+import { ResourceGuide } from "@/components/resource-guide";
 import { NumberedCards } from "@/components/ui/numbered-cards";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
@@ -9,5 +10,6 @@ function CommunityPage() {
     <figure className="community-page-image content-width"><img draggable={false} src="/images/bella-home.png" alt="Bella Nyelle, assistente do Escritório do Talisson no Discord" width="1672" height="941" /><figcaption>Bella Nyelle no universo da comunidade de Talisson Souza.</figcaption></figure>
         <CommunityFeatures />
     <section className="detail-editorial content-width" aria-label="Como participar"><NumberedCards headingLevel={2} items={[{ title: <>Aprender, descobrir e <em>encontrar apoio.</em></>, content: <><p>O painel de inglês permite iniciar estudos em uma thread privada, fazer nivelamento e acompanhar o progresso. A central de atendimento organiza solicitações individuais com a equipe configurada.</p><p>O Programa de Parceiros reúne inscrição, materiais, suporte e acompanhamento privado das indicações e dos resultados.</p><Link className="bella-action" to="/sistemas">Conhecer os sistemas disponíveis</Link></> }]} /></section>
+    <ResourceGuide slug="comunidade" />
   </ContentPage>;
 }

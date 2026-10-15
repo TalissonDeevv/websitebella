@@ -652,3 +652,20 @@ main .intro-text .intro-lead { font-size: 22px; line-height: 1.75; }
 @media (max-width: 540px) { .detail-page main > .content-width, .detail-page main > section.content-width, .systems-page main .content-width { width: 88%; } .detail-intro h1 { font-size: 46px; } .detail-intro > p, .resource-overview-copy > p { font-size: 18px; } .numbered-card, .detail-editorial .numbered-card { padding: 24px 20px; gap: 14px; } .numbered-card-copy > h2, .numbered-card-copy > h3, .detail-editorial .numbered-card h2 { font-size: 18px; } .numbered-card-description, .numbered-card-description p, .detail-editorial .numbered-card p { font-size: 16px; } }
 
 .resource-site-link { margin-top: 24px; }
+
+.resource-guide { padding-top: 24px; padding-bottom: 80px; }
+.resource-guide-sections article { display: grid; grid-template-columns: 1fr 1.35fr; gap: 56px; padding: 48px 0; border-top: 1px solid var(--border); }
+.resource-guide-sections h2 { font: 400 clamp(32px, 3.4vw, 48px)/1.15 var(--font-display); color: var(--foreground); text-wrap: balance; }
+.resource-guide-sections p { font-size: 18px; line-height: 1.85; color: var(--muted-foreground); }
+.resource-guide-sections p + p { margin-top: 20px; }
+.resource-examples, .resource-questions { margin-top: 64px; }
+.resource-questions > div { margin-top: 32px; }
+.resource-questions details { border-bottom: 1px solid var(--border); padding: 20px 0; }
+.resource-questions summary { display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; font-size: 18px; line-height: 1.6; list-style: none; }
+.resource-questions summary::-webkit-details-marker { display: none; }
+.resource-questions summary svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--bella-rose); transition: transform .2s; }
+.resource-questions details[open] summary svg { transform: rotate(180deg); }
+.resource-questions details p { max-width: 850px; margin-top: 20px; color: var(--muted-foreground); font-size: 17px; line-height: 1.85; }
+.resource-questions summary:focus-visible { outline: 2px solid var(--bella-rose); outline-offset: 6px; }
+@media (max-width: 800px) { .resource-guide-sections article { grid-template-columns: 1fr; gap: 24px; } }
+@media (max-width: 540px) { .resource-guide { padding-bottom: 48px; } .resource-guide-sections article { padding: 32px 0; } .resource-guide-sections p { font-size: 17px; } .resource-examples, .resource-questions { margin-top: 40px; } }

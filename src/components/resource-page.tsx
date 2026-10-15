@@ -1,3 +1,4 @@
+import { ResourceGuide } from "@/components/resource-guide";
 import { ContentPage } from "@/components/content-page";
 import { NumberedCards } from "@/components/ui/numbered-cards";
 import { publicResources } from "@/lib/public-resources";
@@ -10,6 +11,7 @@ export function ResourcePage({ slug }: { slug: typeof publicResources[number]["s
       <div className="resource-overview-copy"><span className="eyebrow">Como funciona</span><h2 className="section-title" id="resource-overview-title">{resource.summary}</h2><p>{resource.body}</p>{slug === "monitoramento" && <a className="bella-action resource-site-link" href="https://www.talissonsouza.com.br" target="_blank" rel="noopener noreferrer">Visitar o site de Talisson <ArrowUpRight aria-hidden="true" /></a>}</div>
     </section>
     <section className="resource-steps content-width" aria-label={`Como funciona: ${resource.label}`}><NumberedCards items={resource.steps.map(([title, content]) => ({ title, content: <p>{content}</p> }))} /><p className="resource-note">{resource.note}</p></section>
+    <ResourceGuide slug={slug} />
     <nav className="resource-navigation content-width" aria-label="Outras possibilidades da Bella">{publicResources.map(item => <a key={item.slug} href={`/${item.slug}`} aria-current={item.slug === slug ? "page" : undefined}>{item.label}</a>)}</nav>
     <div className="resource-cta content-width"><p>Os recursos da Bella fazem parte do universo de Talisson Souza no Discord.</p><a className="bella-action" href="https://discord.gg/qR59937ECk" target="_blank" rel="noopener noreferrer">Conhecer a comunidade <ArrowUpRight aria-hidden="true" /></a></div>
   </ContentPage>;
