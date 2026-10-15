@@ -650,3 +650,5 @@ main .intro-text .intro-lead { font-size: 22px; line-height: 1.75; }
 .detail-page .faq-question, .detail-page .faq-answer { font-size: 17px; line-height: 1.8; }
 @media (max-width: 800px) { .resource-overview { grid-template-columns: 1fr; gap: 32px; } .resource-figure img { max-height: none; } .resource-overview-copy { padding-top: 0; } }
 @media (max-width: 540px) { .detail-page main > .content-width, .detail-page main > section.content-width, .systems-page main .content-width { width: 88%; } .detail-intro h1 { font-size: 46px; } .detail-intro > p, .resource-overview-copy > p { font-size: 18px; } .numbered-card, .detail-editorial .numbered-card { padding: 24px 20px; gap: 14px; } .numbered-card-copy > h2, .numbered-card-copy > h3, .detail-editorial .numbered-card h2 { font-size: 18px; } .numbered-card-description, .numbered-card-description p, .detail-editorial .numbered-card p { font-size: 16px; } }
+
+.resource-site-link { margin-top: 24px; }

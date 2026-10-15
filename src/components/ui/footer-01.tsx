@@ -15,6 +15,7 @@ const columns = [
   ] },
   { title: "Mais possibilidades", links: [
     { label: "Estatísticas", href: "/estatisticas" },
+    { label: "Monitoramento do site", href: "/monitoramento" },
     { label: "Parcerias", href: "/parcerias" },
     { label: "Aprendizado", href: "/aprendizado" },
     { label: "Atendimento", href: "/atendimento" },

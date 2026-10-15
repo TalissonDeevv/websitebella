@@ -229,5 +229,46 @@ export const publicResources = [
     "note": "A abertura de um ticket não confirma um orçamento nem um horário de reunião. O atendimento é compartilhado com a equipe responsável configurada para esse espaço.",
     "imageWidth": 539,
     "imageHeight": 486
+  },
+  {
+    "slug": "monitoramento",
+    "label": "Monitoramento do site",
+    "title": "Um olhar atento",
+    "emphasis": "sobre a plataforma.",
+    "intro": "A Bella monitora o site de Talisson Souza para acompanhar disponibilidade, desempenho e mudanças importantes, reunindo o que precisa de atenção em relatórios no Discord.",
+    "image": "/images/paineis/monitoramento-site.png",
+    "imageWidth": 468,
+    "imageHeight": 547,
+    "alt": "Registro da Bella sobre uma alteração de conteúdo no site de Talisson Souza",
+    "caption": "Exemplo de análise de uma alteração na página de perguntas frequentes. Os dados pertencem à captura e não representam o estado atual do site.",
+    "summary": "Ela observa. Você acompanha.",
+    "body": "O acompanhamento de talissonsouza.com.br reúne sinais sobre o funcionamento e a evolução do site. A Bella apresenta o contexto das mudanças, os possíveis impactos e os pontos que merecem validação por Talisson.",
+    "steps": [
+      [
+        "Disponibilidade e desempenho",
+        "A Bella acompanha se o site responde e observa o carregamento das páginas. Mudanças fora do comportamento habitual podem gerar análises e avisos."
+      ],
+      [
+        "Conteúdo e alterações",
+        "Atualizações em páginas, seções e informações do site são acompanhadas para identificar mudanças relevantes e apresentar um resumo do que merece atenção."
+      ],
+      [
+        "Experiência de navegação",
+        "Links, imagens, botões e formulários fazem parte do acompanhamento, assim como aspectos de organização e apresentação das páginas."
+      ],
+      [
+        "Feedbacks da plataforma",
+        "Os feedbacks recebidos pelo site são acompanhados para apoiar a organização das demandas e a compreensão do que as pessoas relatam."
+      ],
+      [
+        "Alertas com contexto",
+        "Quando algo relevante é detectado, a Bella reúne uma interpretação do evento, o possível impacto e recomendações para avaliação do responsável."
+      ],
+      [
+        "Evolução ao longo do tempo",
+        "Relatórios e comparativos ajudam a observar tendências de disponibilidade, desempenho e estabilidade, sem depender apenas de uma ocorrência isolada."
+      ]
+    ],
+    "note": "Esta página explica o acompanhamento de forma geral. Não exibe métricas ao vivo, configurações de monitoramento ou detalhes internos. Um alerta indica algo a verificar; não confirma, sozinho, uma falha ou um ataque."
   }
 ] as const;

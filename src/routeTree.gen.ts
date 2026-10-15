@@ -16,6 +16,7 @@ import { Route as ComunidadeRouteImport } from './routes/comunidade'
 import { Route as ConversasRouteImport } from './routes/conversas'
 import { Route as EstatisticasRouteImport } from './routes/estatisticas'
 import { Route as FuncionalidadesRouteImport } from './routes/funcionalidades'
+import { Route as MonitoramentoRouteImport } from './routes/monitoramento'
 import { Route as ParceriasRouteImport } from './routes/parcerias'
 import { Route as RotinaRouteImport } from './routes/rotina'
 import { Route as SegurancaRouteImport } from './routes/seguranca'
@@ -57,6 +58,11 @@ const FuncionalidadesRoute = FuncionalidadesRouteImport.update({
   path: '/funcionalidades',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MonitoramentoRoute = MonitoramentoRouteImport.update({
+  id: '/monitoramento',
+  path: '/monitoramento',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ParceriasRoute = ParceriasRouteImport.update({
   id: '/parcerias',
   path: '/parcerias',
@@ -91,6 +97,7 @@ export interface FileRoutesByFullPath {
   '/conversas': typeof ConversasRoute
   '/estatisticas': typeof EstatisticasRoute
   '/funcionalidades': typeof FuncionalidadesRoute
+  '/monitoramento': typeof MonitoramentoRoute
   '/parcerias': typeof ParceriasRoute
   '/rotina': typeof RotinaRoute
   '/seguranca': typeof SegurancaRoute
@@ -105,6 +112,7 @@ export interface FileRoutesByTo {
   '/conversas': typeof ConversasRoute
   '/estatisticas': typeof EstatisticasRoute
   '/funcionalidades': typeof FuncionalidadesRoute
+  '/monitoramento': typeof MonitoramentoRoute
   '/parcerias': typeof ParceriasRoute
   '/rotina': typeof RotinaRoute
   '/seguranca': typeof SegurancaRoute
@@ -120,6 +128,7 @@ export interface FileRoutesById {
   '/conversas': typeof ConversasRoute
   '/estatisticas': typeof EstatisticasRoute
   '/funcionalidades': typeof FuncionalidadesRoute
+  '/monitoramento': typeof MonitoramentoRoute
   '/parcerias': typeof ParceriasRoute
   '/rotina': typeof RotinaRoute
   '/seguranca': typeof SegurancaRoute
@@ -136,6 +145,7 @@ export interface FileRouteTypes {
     | '/conversas'
     | '/estatisticas'
     | '/funcionalidades'
+    | '/monitoramento'
     | '/parcerias'
     | '/rotina'
     | '/seguranca'
@@ -150,6 +160,7 @@ export interface FileRouteTypes {
     | '/conversas'
     | '/estatisticas'
     | '/funcionalidades'
+    | '/monitoramento'
     | '/parcerias'
     | '/rotina'
     | '/seguranca'
@@ -164,6 +175,7 @@ export interface FileRouteTypes {
     | '/conversas'
     | '/estatisticas'
     | '/funcionalidades'
+    | '/monitoramento'
     | '/parcerias'
     | '/rotina'
     | '/seguranca'
@@ -179,6 +191,7 @@ export interface RootRouteChildren {
   ConversasRoute: typeof ConversasRoute
   EstatisticasRoute: typeof EstatisticasRoute
   FuncionalidadesRoute: typeof FuncionalidadesRoute
+  MonitoramentoRoute: typeof MonitoramentoRoute
   ParceriasRoute: typeof ParceriasRoute
   RotinaRoute: typeof RotinaRoute
   SegurancaRoute: typeof SegurancaRoute
@@ -237,6 +250,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FuncionalidadesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/monitoramento': {
+      id: '/monitoramento'
+      path: '/monitoramento'
+      fullPath: '/monitoramento'
+      preLoaderRoute: typeof MonitoramentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/parcerias': {
       id: '/parcerias'
       path: '/parcerias'
@@ -283,6 +303,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConversasRoute: ConversasRoute,
   EstatisticasRoute: EstatisticasRoute,
   FuncionalidadesRoute: FuncionalidadesRoute,
+  MonitoramentoRoute: MonitoramentoRoute,
   ParceriasRoute: ParceriasRoute,
   RotinaRoute: RotinaRoute,
   SegurancaRoute: SegurancaRoute,

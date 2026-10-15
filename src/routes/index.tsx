@@ -70,7 +70,7 @@ function Index() {
         <section className="behind-scenes content-width" id="bastidores" aria-labelledby="behind-title">
           <div className="section-heading"><div><span className="eyebrow">Mesmo quando ninguém vê</span><h2 className="section-title" id="behind-title">Nos bastidores,<br /><em>ela continua cuidando.</em></h2></div><p className="panels-intro">O cuidado também está nos detalhes que mantêm a rotina organizada e a plataforma acompanhada.</p></div>
           <NumberedCards items={[
-            { title: "Um olhar sobre a plataforma", content: <p>Disponibilidade, páginas, links, formulários e mudanças no repositório. A Bella acompanha o site e reúne evidências para explicar o impacto das alterações.</p> },
+            { title: "Um olhar sobre a plataforma", content: <><p>Disponibilidade, páginas, links, formulários e mudanças no repositório. A Bella acompanha o site e reúne evidências para explicar o impacto das alterações.</p><a className="numbered-card-link" href="/monitoramento">Conhecer o monitoramento do site</a></> },
             { title: "A informação encontra seu destino", content: <p>Feedbacks sincronizados sem repetir os já processados, recados classificados e compromissos com lembretes. Cada assunto chega ao lugar certo.</p> },
             { title: "Resultados com contexto", content: <p>Relatórios periódicos apresentam indicadores, tendências e recomendações. O Programa de Parceiros também conta com comparativos e histórico de resultados.</p> },
           ]} />

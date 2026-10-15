@@ -8,6 +8,7 @@ export const destinations = [
   { to: "/universo", label: "O universo Bella" },
   { to: "/funcionalidades", label: "O que ela faz" },
   { to: "/comunidade", label: "Comunidade" },
+  { to: "/monitoramento", label: "Monitoramento do site" },
 ] as const;
 
 export function SiteNavigation() {
