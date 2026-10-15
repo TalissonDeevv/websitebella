@@ -8,16 +8,16 @@ const columns = [
     { label: "Comunidade", href: "/comunidade" },
   ] },
   { title: "Ela cuida", links: [
-    { label: "Conversas", href: "/funcionalidades#cuidado-1" },
-    { label: "Sua rotina", href: "/funcionalidades#cuidado-2" },
-    { label: "Segurança", href: "/funcionalidades#cuidado-3" },
-    { label: "Comunidade", href: "/funcionalidades#cuidado-8" },
+    { label: "Conversas", href: "/conversas" },
+    { label: "Sua rotina", href: "/rotina" },
+    { label: "Segurança", href: "/seguranca" },
+    { label: "Comunidade", href: "/comunidade" },
   ] },
   { title: "Mais possibilidades", links: [
-    { label: "Estatísticas", href: "/funcionalidades#cuidado-4" },
-    { label: "Parcerias", href: "/funcionalidades#cuidado-5" },
-    { label: "Aprendizado", href: "/funcionalidades#cuidado-6" },
-    { label: "Atendimento", href: "/funcionalidades#cuidado-7" },
+    { label: "Estatísticas", href: "/estatisticas" },
+    { label: "Parcerias", href: "/parcerias" },
+    { label: "Aprendizado", href: "/aprendizado" },
+    { label: "Atendimento", href: "/atendimento" },
   ] },
 ];
 

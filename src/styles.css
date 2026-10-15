@@ -599,3 +599,24 @@ img { -webkit-user-drag: none; user-select: none; }
 .discord-stat-detail { font-size: 12px; line-height: 1.7; color: var(--muted-foreground); }
 @media (max-width: 800px) { .discord-stats { grid-template-columns: 1fr; gap: 32px; } .discord-stats-intro > p, .discord-stats-intro > small { max-width: 600px; } }
 @media (max-width: 540px) { .numbered-grid { grid-template-columns: 1fr; } .numbered-card, .detail-editorial .numbered-card { padding: 20px; } .discord-stats { padding-top: 48px; padding-bottom: 24px; } .discord-stat { padding: 20px 16px; } }
+
+.resource-overview { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 48px; padding-bottom: 32px; }
+.resource-figure img { width: 100%; height: auto; max-height: 450px; object-fit: contain; display: block; }
+.resource-figure figcaption { margin-top: 16px; font-size: 12px; line-height: 1.7; color: var(--muted-foreground); }
+.resource-overview-copy .section-title { font-size: clamp(30px, 3.4vw, 44px); margin-bottom: 24px; }
+.resource-overview-copy > p { font-size: 16px; line-height: 1.8; color: var(--muted-foreground); }
+.resource-steps { padding-bottom: 40px; }
+.resource-note { margin-top: 32px; padding-left: 20px; border-left: 2px solid var(--bella-rose); font-size: 14px; line-height: 1.8; color: var(--muted-foreground); max-width: 850px; }
+.resource-navigation { display: flex; flex-wrap: wrap; gap: 8px 24px; border-top: 1px solid var(--border); padding-top: 24px; }
+.resource-navigation a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; color: var(--muted-foreground); }
+.resource-navigation a[aria-current], .resource-navigation a:hover { color: var(--bella-rose); }
+.resource-cta { padding-top: 32px; padding-bottom: 80px; }
+.resource-cta > p { font-size: 14px; line-height: 1.8; color: var(--muted-foreground); margin-bottom: 16px; }
+.numbered-card-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 8px; color: var(--bella-rose); font-size: 13px; }
+.numbered-card-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 800px) { .resource-overview { grid-template-columns: 1fr; gap: 32px; } .resource-figure img { max-height: 420px; } }
+
+main .intro .section-title { font-size: clamp(44px, 4.5vw, 64px); }
+main .intro-text { font-size: 20px; line-height: 1.8; }
+main .intro-text .intro-lead { font-size: 22px; line-height: 1.75; }
+@media (max-width: 540px) { main .intro .section-title { font-size: 42px; } main .intro-text, main .intro-text .intro-lead { font-size: 18px; } }

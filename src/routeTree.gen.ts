@@ -10,8 +10,15 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AprendizadoRouteImport } from './routes/aprendizado'
+import { Route as AtendimentoRouteImport } from './routes/atendimento'
 import { Route as ComunidadeRouteImport } from './routes/comunidade'
+import { Route as ConversasRouteImport } from './routes/conversas'
+import { Route as EstatisticasRouteImport } from './routes/estatisticas'
 import { Route as FuncionalidadesRouteImport } from './routes/funcionalidades'
+import { Route as ParceriasRouteImport } from './routes/parcerias'
+import { Route as RotinaRouteImport } from './routes/rotina'
+import { Route as SegurancaRouteImport } from './routes/seguranca'
 import { Route as SistemasRouteImport } from './routes/sistemas'
 import { Route as UniversoRouteImport } from './routes/universo'
 
@@ -20,14 +27,49 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AprendizadoRoute = AprendizadoRouteImport.update({
+  id: '/aprendizado',
+  path: '/aprendizado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AtendimentoRoute = AtendimentoRouteImport.update({
+  id: '/atendimento',
+  path: '/atendimento',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ComunidadeRoute = ComunidadeRouteImport.update({
   id: '/comunidade',
   path: '/comunidade',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConversasRoute = ConversasRouteImport.update({
+  id: '/conversas',
+  path: '/conversas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EstatisticasRoute = EstatisticasRouteImport.update({
+  id: '/estatisticas',
+  path: '/estatisticas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FuncionalidadesRoute = FuncionalidadesRouteImport.update({
   id: '/funcionalidades',
   path: '/funcionalidades',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParceriasRoute = ParceriasRouteImport.update({
+  id: '/parcerias',
+  path: '/parcerias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RotinaRoute = RotinaRouteImport.update({
+  id: '/rotina',
+  path: '/rotina',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SegurancaRoute = SegurancaRouteImport.update({
+  id: '/seguranca',
+  path: '/seguranca',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SistemasRoute = SistemasRouteImport.update({
@@ -43,45 +85,103 @@ const UniversoRoute = UniversoRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aprendizado': typeof AprendizadoRoute
+  '/atendimento': typeof AtendimentoRoute
   '/comunidade': typeof ComunidadeRoute
+  '/conversas': typeof ConversasRoute
+  '/estatisticas': typeof EstatisticasRoute
   '/funcionalidades': typeof FuncionalidadesRoute
+  '/parcerias': typeof ParceriasRoute
+  '/rotina': typeof RotinaRoute
+  '/seguranca': typeof SegurancaRoute
   '/sistemas': typeof SistemasRoute
   '/universo': typeof UniversoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aprendizado': typeof AprendizadoRoute
+  '/atendimento': typeof AtendimentoRoute
   '/comunidade': typeof ComunidadeRoute
+  '/conversas': typeof ConversasRoute
+  '/estatisticas': typeof EstatisticasRoute
   '/funcionalidades': typeof FuncionalidadesRoute
+  '/parcerias': typeof ParceriasRoute
+  '/rotina': typeof RotinaRoute
+  '/seguranca': typeof SegurancaRoute
   '/sistemas': typeof SistemasRoute
   '/universo': typeof UniversoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aprendizado': typeof AprendizadoRoute
+  '/atendimento': typeof AtendimentoRoute
   '/comunidade': typeof ComunidadeRoute
+  '/conversas': typeof ConversasRoute
+  '/estatisticas': typeof EstatisticasRoute
   '/funcionalidades': typeof FuncionalidadesRoute
+  '/parcerias': typeof ParceriasRoute
+  '/rotina': typeof RotinaRoute
+  '/seguranca': typeof SegurancaRoute
   '/sistemas': typeof SistemasRoute
   '/universo': typeof UniversoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/comunidade' | '/funcionalidades' | '/sistemas' | '/universo'
+    | '/'
+    | '/aprendizado'
+    | '/atendimento'
+    | '/comunidade'
+    | '/conversas'
+    | '/estatisticas'
+    | '/funcionalidades'
+    | '/parcerias'
+    | '/rotina'
+    | '/seguranca'
+    | '/sistemas'
+    | '/universo'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/comunidade' | '/funcionalidades' | '/sistemas' | '/universo'
+  to:
+    | '/'
+    | '/aprendizado'
+    | '/atendimento'
+    | '/comunidade'
+    | '/conversas'
+    | '/estatisticas'
+    | '/funcionalidades'
+    | '/parcerias'
+    | '/rotina'
+    | '/seguranca'
+    | '/sistemas'
+    | '/universo'
   id:
     | '__root__'
     | '/'
+    | '/aprendizado'
+    | '/atendimento'
     | '/comunidade'
+    | '/conversas'
+    | '/estatisticas'
     | '/funcionalidades'
+    | '/parcerias'
+    | '/rotina'
+    | '/seguranca'
     | '/sistemas'
     | '/universo'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AprendizadoRoute: typeof AprendizadoRoute
+  AtendimentoRoute: typeof AtendimentoRoute
   ComunidadeRoute: typeof ComunidadeRoute
+  ConversasRoute: typeof ConversasRoute
+  EstatisticasRoute: typeof EstatisticasRoute
   FuncionalidadesRoute: typeof FuncionalidadesRoute
+  ParceriasRoute: typeof ParceriasRoute
+  RotinaRoute: typeof RotinaRoute
+  SegurancaRoute: typeof SegurancaRoute
   SistemasRoute: typeof SistemasRoute
   UniversoRoute: typeof UniversoRoute
 }
@@ -95,6 +195,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aprendizado': {
+      id: '/aprendizado'
+      path: '/aprendizado'
+      fullPath: '/aprendizado'
+      preLoaderRoute: typeof AprendizadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/atendimento': {
+      id: '/atendimento'
+      path: '/atendimento'
+      fullPath: '/atendimento'
+      preLoaderRoute: typeof AtendimentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/comunidade': {
       id: '/comunidade'
       path: '/comunidade'
@@ -102,11 +216,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComunidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/conversas': {
+      id: '/conversas'
+      path: '/conversas'
+      fullPath: '/conversas'
+      preLoaderRoute: typeof ConversasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/estatisticas': {
+      id: '/estatisticas'
+      path: '/estatisticas'
+      fullPath: '/estatisticas'
+      preLoaderRoute: typeof EstatisticasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/funcionalidades': {
       id: '/funcionalidades'
       path: '/funcionalidades'
       fullPath: '/funcionalidades'
       preLoaderRoute: typeof FuncionalidadesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parcerias': {
+      id: '/parcerias'
+      path: '/parcerias'
+      fullPath: '/parcerias'
+      preLoaderRoute: typeof ParceriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rotina': {
+      id: '/rotina'
+      path: '/rotina'
+      fullPath: '/rotina'
+      preLoaderRoute: typeof RotinaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seguranca': {
+      id: '/seguranca'
+      path: '/seguranca'
+      fullPath: '/seguranca'
+      preLoaderRoute: typeof SegurancaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sistemas': {
@@ -128,8 +277,15 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AprendizadoRoute: AprendizadoRoute,
+  AtendimentoRoute: AtendimentoRoute,
   ComunidadeRoute: ComunidadeRoute,
+  ConversasRoute: ConversasRoute,
+  EstatisticasRoute: EstatisticasRoute,
   FuncionalidadesRoute: FuncionalidadesRoute,
+  ParceriasRoute: ParceriasRoute,
+  RotinaRoute: RotinaRoute,
+  SegurancaRoute: SegurancaRoute,
   SistemasRoute: SistemasRoute,
   UniversoRoute: UniversoRoute,
 }
