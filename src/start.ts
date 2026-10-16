@@ -1,4 +1,5 @@
 import { createStart, createCsrfMiddleware, createMiddleware } from "@tanstack/react-start";
+import { setResponseHeader } from "@tanstack/react-start/server";
 
 import { renderErrorPage } from "./lib/error-page";
 
@@ -24,6 +25,18 @@ const csrfMiddleware = createCsrfMiddleware({
   filter: (ctx) => ctx.handlerType === "serverFn",
 });
 
+const securityHeadersMiddleware = createMiddleware().server(async ({ next }) => {
+  setResponseHeader("X-Content-Type-Options", "nosniff");
+  setResponseHeader("X-Frame-Options", "DENY");
+  setResponseHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+  setResponseHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=()");
+  setResponseHeader("Cross-Origin-Resource-Policy", "same-origin");
+  if (process.env["NODE_ENV"] === "production") {
+    setResponseHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+  }
+  return next();
+});
+
 export const startInstance = createStart(() => ({
-  requestMiddleware: [errorMiddleware, csrfMiddleware],
+  requestMiddleware: [securityHeadersMiddleware, errorMiddleware, csrfMiddleware],
 }));

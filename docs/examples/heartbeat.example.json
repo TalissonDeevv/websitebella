@@ -1,0 +1,19 @@
+{
+  "contractVersion": 1,
+  "eventId": "heartbeat:2026-10-15T12:00:00Z",
+  "occurredAt": "2026-10-15T12:00:00.000Z",
+  "type": "heartbeat",
+  "payload": {
+    "state": "online",
+    "latencyMs": 84,
+    "version": "2026.10.15",
+    "services": [
+      {
+        "key": "discord",
+        "label": "Bot Discord",
+        "state": "operational",
+        "latencyMs": 84
+      }
+    ]
+  }
+}

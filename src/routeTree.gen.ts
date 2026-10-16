@@ -17,11 +17,16 @@ import { Route as ConversasRouteImport } from './routes/conversas'
 import { Route as EstatisticasRouteImport } from './routes/estatisticas'
 import { Route as FuncionalidadesRouteImport } from './routes/funcionalidades'
 import { Route as MonitoramentoRouteImport } from './routes/monitoramento'
+import { Route as ObservatorioRouteImport } from './routes/observatorio'
 import { Route as ParceriasRouteImport } from './routes/parcerias'
 import { Route as RotinaRouteImport } from './routes/rotina'
 import { Route as SegurancaRouteImport } from './routes/seguranca'
 import { Route as SistemasRouteImport } from './routes/sistemas'
 import { Route as UniversoRouteImport } from './routes/universo'
+import { Route as ApiPublicActivityRouteImport } from './routes/api/public/activity'
+import { Route as ApiPublicCommandsRouteImport } from './routes/api/public/commands'
+import { Route as ApiPublicDashboardRouteImport } from './routes/api/public/dashboard'
+import { Route as ApiIntegrationV1EventsRouteImport } from './routes/api/integration/v1/events'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -63,6 +68,11 @@ const MonitoramentoRoute = MonitoramentoRouteImport.update({
   path: '/monitoramento',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ObservatorioRoute = ObservatorioRouteImport.update({
+  id: '/observatorio',
+  path: '/observatorio',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ParceriasRoute = ParceriasRouteImport.update({
   id: '/parcerias',
   path: '/parcerias',
@@ -88,6 +98,26 @@ const UniversoRoute = UniversoRouteImport.update({
   path: '/universo',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicActivityRoute = ApiPublicActivityRouteImport.update({
+  id: '/api/public/activity',
+  path: '/api/public/activity',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicCommandsRoute = ApiPublicCommandsRouteImport.update({
+  id: '/api/public/commands',
+  path: '/api/public/commands',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicDashboardRoute = ApiPublicDashboardRouteImport.update({
+  id: '/api/public/dashboard',
+  path: '/api/public/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiIntegrationV1EventsRoute = ApiIntegrationV1EventsRouteImport.update({
+  id: '/api/integration/v1/events',
+  path: '/api/integration/v1/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -98,11 +128,16 @@ export interface FileRoutesByFullPath {
   '/estatisticas': typeof EstatisticasRoute
   '/funcionalidades': typeof FuncionalidadesRoute
   '/monitoramento': typeof MonitoramentoRoute
+  '/observatorio': typeof ObservatorioRoute
   '/parcerias': typeof ParceriasRoute
   '/rotina': typeof RotinaRoute
   '/seguranca': typeof SegurancaRoute
   '/sistemas': typeof SistemasRoute
   '/universo': typeof UniversoRoute
+  '/api/public/activity': typeof ApiPublicActivityRoute
+  '/api/public/commands': typeof ApiPublicCommandsRoute
+  '/api/public/dashboard': typeof ApiPublicDashboardRoute
+  '/api/integration/v1/events': typeof ApiIntegrationV1EventsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -113,11 +148,16 @@ export interface FileRoutesByTo {
   '/estatisticas': typeof EstatisticasRoute
   '/funcionalidades': typeof FuncionalidadesRoute
   '/monitoramento': typeof MonitoramentoRoute
+  '/observatorio': typeof ObservatorioRoute
   '/parcerias': typeof ParceriasRoute
   '/rotina': typeof RotinaRoute
   '/seguranca': typeof SegurancaRoute
   '/sistemas': typeof SistemasRoute
   '/universo': typeof UniversoRoute
+  '/api/public/activity': typeof ApiPublicActivityRoute
+  '/api/public/commands': typeof ApiPublicCommandsRoute
+  '/api/public/dashboard': typeof ApiPublicDashboardRoute
+  '/api/integration/v1/events': typeof ApiIntegrationV1EventsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -129,11 +169,16 @@ export interface FileRoutesById {
   '/estatisticas': typeof EstatisticasRoute
   '/funcionalidades': typeof FuncionalidadesRoute
   '/monitoramento': typeof MonitoramentoRoute
+  '/observatorio': typeof ObservatorioRoute
   '/parcerias': typeof ParceriasRoute
   '/rotina': typeof RotinaRoute
   '/seguranca': typeof SegurancaRoute
   '/sistemas': typeof SistemasRoute
   '/universo': typeof UniversoRoute
+  '/api/public/activity': typeof ApiPublicActivityRoute
+  '/api/public/commands': typeof ApiPublicCommandsRoute
+  '/api/public/dashboard': typeof ApiPublicDashboardRoute
+  '/api/integration/v1/events': typeof ApiIntegrationV1EventsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -146,11 +191,16 @@ export interface FileRouteTypes {
     | '/estatisticas'
     | '/funcionalidades'
     | '/monitoramento'
+    | '/observatorio'
     | '/parcerias'
     | '/rotina'
     | '/seguranca'
     | '/sistemas'
     | '/universo'
+    | '/api/public/activity'
+    | '/api/public/commands'
+    | '/api/public/dashboard'
+    | '/api/integration/v1/events'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -161,11 +211,16 @@ export interface FileRouteTypes {
     | '/estatisticas'
     | '/funcionalidades'
     | '/monitoramento'
+    | '/observatorio'
     | '/parcerias'
     | '/rotina'
     | '/seguranca'
     | '/sistemas'
     | '/universo'
+    | '/api/public/activity'
+    | '/api/public/commands'
+    | '/api/public/dashboard'
+    | '/api/integration/v1/events'
   id:
     | '__root__'
     | '/'
@@ -176,11 +231,16 @@ export interface FileRouteTypes {
     | '/estatisticas'
     | '/funcionalidades'
     | '/monitoramento'
+    | '/observatorio'
     | '/parcerias'
     | '/rotina'
     | '/seguranca'
     | '/sistemas'
     | '/universo'
+    | '/api/public/activity'
+    | '/api/public/commands'
+    | '/api/public/dashboard'
+    | '/api/integration/v1/events'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -192,11 +252,16 @@ export interface RootRouteChildren {
   EstatisticasRoute: typeof EstatisticasRoute
   FuncionalidadesRoute: typeof FuncionalidadesRoute
   MonitoramentoRoute: typeof MonitoramentoRoute
+  ObservatorioRoute: typeof ObservatorioRoute
   ParceriasRoute: typeof ParceriasRoute
   RotinaRoute: typeof RotinaRoute
   SegurancaRoute: typeof SegurancaRoute
   SistemasRoute: typeof SistemasRoute
   UniversoRoute: typeof UniversoRoute
+  ApiPublicActivityRoute: typeof ApiPublicActivityRoute
+  ApiPublicCommandsRoute: typeof ApiPublicCommandsRoute
+  ApiPublicDashboardRoute: typeof ApiPublicDashboardRoute
+  ApiIntegrationV1EventsRoute: typeof ApiIntegrationV1EventsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -257,6 +322,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MonitoramentoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/observatorio': {
+      id: '/observatorio'
+      path: '/observatorio'
+      fullPath: '/observatorio'
+      preLoaderRoute: typeof ObservatorioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/parcerias': {
       id: '/parcerias'
       path: '/parcerias'
@@ -292,6 +364,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UniversoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/activity': {
+      id: '/api/public/activity'
+      path: '/api/public/activity'
+      fullPath: '/api/public/activity'
+      preLoaderRoute: typeof ApiPublicActivityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/commands': {
+      id: '/api/public/commands'
+      path: '/api/public/commands'
+      fullPath: '/api/public/commands'
+      preLoaderRoute: typeof ApiPublicCommandsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/dashboard': {
+      id: '/api/public/dashboard'
+      path: '/api/public/dashboard'
+      fullPath: '/api/public/dashboard'
+      preLoaderRoute: typeof ApiPublicDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/integration/v1/events': {
+      id: '/api/integration/v1/events'
+      path: '/api/integration/v1/events'
+      fullPath: '/api/integration/v1/events'
+      preLoaderRoute: typeof ApiIntegrationV1EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -304,11 +404,16 @@ const rootRouteChildren: RootRouteChildren = {
   EstatisticasRoute: EstatisticasRoute,
   FuncionalidadesRoute: FuncionalidadesRoute,
   MonitoramentoRoute: MonitoramentoRoute,
+  ObservatorioRoute: ObservatorioRoute,
   ParceriasRoute: ParceriasRoute,
   RotinaRoute: RotinaRoute,
   SegurancaRoute: SegurancaRoute,
   SistemasRoute: SistemasRoute,
   UniversoRoute: UniversoRoute,
+  ApiPublicActivityRoute: ApiPublicActivityRoute,
+  ApiPublicCommandsRoute: ApiPublicCommandsRoute,
+  ApiPublicDashboardRoute: ApiPublicDashboardRoute,
+  ApiIntegrationV1EventsRoute: ApiIntegrationV1EventsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -5,6 +5,7 @@ const columns = [
   { title: "O universo", links: [
     { label: "Conheça a Bella", href: "/universo" },
     { label: "O que ela faz", href: "/funcionalidades" },
+    { label: "Observatório", href: "/observatorio" },
     { label: "Comunidade", href: "/comunidade" },
   ] },
   { title: "Ela cuida", links: [

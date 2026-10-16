@@ -7,6 +7,7 @@ export const destinations = [
   { to: "/", label: "Início" },
   { to: "/universo", label: "O universo Bella" },
   { to: "/funcionalidades", label: "O que ela faz" },
+  { to: "/observatorio", label: "Observatório" },
   { to: "/comunidade", label: "Comunidade" },
   { to: "/monitoramento", label: "Monitoramento do site" },
 ] as const;

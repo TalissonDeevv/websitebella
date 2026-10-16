@@ -28,3 +28,15 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Bella Observatory
+
+O site possui um ecossistema público integrado em `/observatorio`, com status operacional separado da rotina da personagem, métricas autorizadas, feed público, segurança agregada, infraestrutura, incidentes, evolução, comunidade e catálogo de comandos.
+
+A integração de escrita usa HMAC, escopos, idempotência e anti-replay. O navegador nunca recebe credenciais do bot ou acesso direto ao banco. Configure PostgreSQL e execute:
+
+```sh
+npm run db:migrate
+```
+
+A arquitetura, variáveis, contratos, payloads e exemplo Python estão documentados em [`docs/BELLA_PUBLIC_ECOSYSTEM.md`](docs/BELLA_PUBLIC_ECOSYSTEM.md).

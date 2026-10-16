@@ -8,9 +8,12 @@ import { SystemsPreview } from "@/components/ui/systems-gallery";
 import { CommunityFeatures } from "@/components/ui/community-features";
 import { FaqAccordion } from "@/components/ui/faq-chat-accordion";
 import Footer01 from "@/components/ui/footer-01";
+import { LiveStatusPreview } from "@/components/observatory/live-status-preview";
 import brand from "@/assets/bella-nyelle.png.asset.json";
+import { getPublicDashboardServer } from "@/lib/public-platform.functions";
 
 export const Route = createFileRoute("/")({
+  loader: () => getPublicDashboardServer({ data: "7d" }),
   component: Index,
   head: () => ({
     meta: [
@@ -26,6 +29,7 @@ export const Route = createFileRoute("/")({
 
 
 function Index() {
+  const dashboard = Route.useLoaderData();
   return (
     <div className="bella-page" id="inicio">
       <a className="bella-skip" href="#conteudo">Ir para o conteúdo</a>
@@ -54,6 +58,7 @@ function Index() {
           </div>
         </section>
 
+        <LiveStatusPreview dashboard={dashboard} />
 
         <Stats />
 

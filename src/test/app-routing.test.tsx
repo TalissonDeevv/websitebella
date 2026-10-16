@@ -14,4 +14,12 @@ describe("App routing", () => {
 
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
+
+  it("matches the Observatory and public API routes", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    expect(router.matchRoutes("/observatorio").at(-1)?.routeId).toBe("/observatorio");
+    expect(router.matchRoutes("/api/public/dashboard").at(-1)?.routeId).toBe("/api/public/dashboard");
+    expect(router.matchRoutes("/api/integration/v1/events").at(-1)?.routeId).toBe("/api/integration/v1/events");
+  });
 });
